@@ -1,6 +1,6 @@
 {
   "name": "react-clock-test-page",
-  "version": "0.0.1-alpha",
+  "version": "2.0.0",
   "description": "A test page for React-Clock.",
   "private": true,
   "scripts": {
