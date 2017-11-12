@@ -63,7 +63,11 @@ export default class Clock extends Component {
       value,
     } = this.props;
 
-    const angle = (value.getHours() * 30) + (value.getMinutes() / 2) + (value.getSeconds() / 600);
+    const angle = (
+      (value.getHours() * 30) +
+      (value.getMinutes() / 2) +
+      (value.getSeconds() / 600)
+    );
 
     return (
       <Hand
@@ -88,7 +92,11 @@ export default class Clock extends Component {
       value,
     } = this.props;
 
-    const angle = (value.getMinutes() * 6) + (value.getSeconds() / 10);
+    const angle = (
+      (value.getHours() * 360) +
+      (value.getMinutes() * 6) +
+      (value.getSeconds() / 10)
+    );
 
     return (
       <Hand
@@ -113,7 +121,10 @@ export default class Clock extends Component {
       value,
     } = this.props;
 
-    const angle = value.getSeconds() * 6;
+    const angle = (
+      (value.getMinutes() * 360) +
+      (value.getSeconds() * 6)
+    );
 
     return (
       <Hand
