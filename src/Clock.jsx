@@ -138,11 +138,12 @@ export default class Clock extends Component {
   }
 
   render() {
-    const { size } = this.props;
+    const { size, value } = this.props;
 
     return (
-      <div
+      <time
         className={mergeClassNames('react-clock', this.props.className)}
+        dateTime={value.toISOString()}
         style={{
           width: `${size}px`,
           height: `${size}px`,
@@ -152,7 +153,7 @@ export default class Clock extends Component {
         {this.renderHourHand()}
         {this.renderMinuteHand()}
         {this.renderSecondHand()}
-      </div>
+      </time>
     );
   }
 }
