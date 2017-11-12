@@ -70,7 +70,7 @@ Displays a complete clock.
 |----|----|----|
 |className|Defines class name(s) that will be added along with "react-clock" to the main React-Clock `<time>` element.|<ul><li>String: `"class1 class2"`</li><li>Array of strings: `["class1", "class2 class3"]`</li></ul>|
 |hourHandLength|Defines the length of an hour hand, in %. Defaults to `50`.|`80`|
-|hourHandOppositeLength|Defines the length of the part of an hour hand on the opposite side the hand is pointing to, in %.|???|
+|hourHandOppositeLength|Defines the length of the part of an hour hand on the opposite side the hand is pointing to, in %.|`20`|
 |hourHandWidth|Defines the width of an hour hand, in pixels. Defaults to `4`.|`3`|
 |hourMarksLength|Defines the length of hour marks, in %. Defaults to `10`.|`8`|
 |hourMarksWidth|Defines the width of hour marks, in pixels. Defaults to `3`.|`2`|
