@@ -1,6 +1,7 @@
 ![downloads](https://img.shields.io/npm/dt/react-clock.svg) ![build](https://img.shields.io/travis/wojtekmaj/react-clock.svg) ![dependencies](https://img.shields.io/david/wojtekmaj/react-clock.svg
 ) ![dev dependencies](https://img.shields.io/david/dev/wojtekmaj/react-clock.svg
 ) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwojtekmaj%2Freact-clock.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwojtekmaj%2Freact-clock?ref=badge_shield)
 
 # React-Clock
 
@@ -92,6 +93,9 @@ Displays a complete clock.
 ## License
 
 The MIT License.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwojtekmaj%2Freact-clock.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwojtekmaj%2Freact-clock?ref=badge_large)
 
 ## Author
 
