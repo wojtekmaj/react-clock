@@ -17,6 +17,5 @@ ratings:
   - "**.js"
   - "**.jsx"
 exclude_paths:
-- build/
-- test/build/
+- "test"
 - "**/__tests__"
