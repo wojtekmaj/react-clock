@@ -7,3 +7,11 @@ fs.copyFile('./src/Clock.less', 'build/Clock.less', (error) => {
   // eslint-disable-next-line no-console
   console.log('Clock.less copied successfully.');
 });
+
+fs.copyFile('./src/Clock.css', 'build/Clock.css', (error) => {
+  if (error) {
+    throw error;
+  }
+  // eslint-disable-next-line no-console
+  console.log('Clock.css copied successfully.');
+});
