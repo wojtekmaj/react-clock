@@ -1,6 +1,6 @@
 {
   "name": "react-clock",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A component to display clock for your React application.",
   "main": "build/entry.js",
   "es6": "src/entry.js",
