@@ -5,6 +5,12 @@ import mergeClassNames from 'merge-class-names';
 import Hand from './Hand';
 import Mark from './Mark';
 
+import {
+  getHours,
+  getMinutes,
+  getSeconds,
+} from './shared/dates';
+
 export default class Clock extends Component {
   renderFace() {
     const {
@@ -63,11 +69,11 @@ export default class Clock extends Component {
       value,
     } = this.props;
 
-    const angle = (
-      (value.getHours() * 30) +
-      (value.getMinutes() / 2) +
-      (value.getSeconds() / 600)
-    );
+    const angle = value ? (
+      (getHours(value) * 30) +
+      (getMinutes(value) / 2) +
+      (getSeconds(value) / 600)
+    ) : 0;
 
     return (
       <Hand
@@ -92,11 +98,11 @@ export default class Clock extends Component {
       value,
     } = this.props;
 
-    const angle = (
-      (value.getHours() * 360) +
-      (value.getMinutes() * 6) +
-      (value.getSeconds() / 10)
-    );
+    const angle = value ? (
+      (getHours(value) * 360) +
+      (getMinutes(value) * 6) +
+      (getSeconds(value) / 10)
+    ) : 0;
 
     return (
       <Hand
@@ -121,10 +127,10 @@ export default class Clock extends Component {
       value,
     } = this.props;
 
-    const angle = (
-      (value.getMinutes() * 360) +
-      (value.getSeconds() * 6)
-    );
+    const angle = value ? (
+      (getMinutes(value) * 360) +
+      (getSeconds(value) * 6)
+    ) : 0;
 
     return (
       <Hand
@@ -143,7 +149,7 @@ export default class Clock extends Component {
     return (
       <time
         className={mergeClassNames('react-clock', this.props.className)}
-        dateTime={value.toISOString()}
+        dateTime={value instanceof Date ? value.toISOString() : value}
         style={{
           width: `${size}px`,
           height: `${size}px`,
@@ -199,5 +205,8 @@ Clock.propTypes = {
   secondHandOppositeLength: PropTypes.number,
   secondHandWidth: PropTypes.number,
   size: PropTypes.number,
-  value: PropTypes.instanceOf(Date),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Date),
+  ]),
 };
