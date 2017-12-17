@@ -7,8 +7,8 @@ export const getHours = (date) => {
   }
 
   if (typeof date === 'string' && hourOptionalSecondsRegExp.test(date)) {
-    const minuteString = date.split(':')[0];
-    return parseInt(minuteString, 10);
+    const [hourString] = date.split(':');
+    return parseInt(hourString, 10);
   }
 
   throw new Error(`Failed to get hours from date: ${date}.`);
@@ -20,7 +20,7 @@ export const getMinutes = (date) => {
   }
 
   if (typeof date === 'string' && hourOptionalSecondsRegExp.test(date)) {
-    const minuteString = date.split(':')[1];
+    const [, minuteString] = date.split(':');
     return parseInt(minuteString, 10);
   }
 
@@ -34,8 +34,8 @@ export const getSeconds = (date) => {
 
   if (typeof date === 'string') {
     if (hourRegExp.test(date)) {
-      const minuteString = date.split(':')[2];
-      return parseInt(minuteString, 10);
+      const [, , secondString] = date.split(':');
+      return parseInt(secondString, 10);
     } else if (hourOptionalSecondsRegExp.test(date)) {
       return 0;
     }
