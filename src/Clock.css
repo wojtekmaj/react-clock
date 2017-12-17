@@ -1,4 +1,5 @@
 .react-clock {
+  display: block;
   position: relative;
 }
 .react-clock,
