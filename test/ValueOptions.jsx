@@ -9,7 +9,7 @@ export default class ValueOptions extends Component {
   onChange = (event) => {
     const { value } = event.target;
 
-    this.setValue(new Date(value));
+    this.setValue(value);
   }
 
   render() {
@@ -36,5 +36,8 @@ export default class ValueOptions extends Component {
 
 ValueOptions.propTypes = {
   setState: PropTypes.func.isRequired,
-  value: PropTypes.instanceOf(Date),
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Date),
+  ]),
 };
