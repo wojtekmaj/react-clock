@@ -56,7 +56,7 @@ class MyApp extends Component {
 
 ### Custom styling
 
-If you don't want to use default React-Clock styling to build upon it, you can import React-Clock by using `import Clock from 'react-clock/build/entry.nostyle';` instead.
+If you don't want to use default React-Clock styling to build upon it, you can import React-Clock by using `import Clock from 'react-clock/dist/entry.nostyle';` instead.
 
 ## User guide
 
