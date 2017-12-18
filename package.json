@@ -2,11 +2,11 @@
   "name": "react-clock",
   "version": "2.1.0",
   "description": "A component to display clock for your React application.",
-  "main": "build/entry.js",
+  "main": "dist/entry.js",
   "es6": "src/entry.js",
   "scripts": {
     "build": "npm run build-js && npm run build-styles && npm run copy-styles",
-    "build-js": "babel src -d build --ignore **/__tests__",
+    "build-js": "babel src -d dist --ignore **/__tests__",
     "build-styles": "lessc ./src/Clock.less ./src/Clock.css",
     "copy-styles": "node ./copy-styles.js",
     "prepublishOnly": "npm run build",
@@ -68,7 +68,7 @@
   "files": [
     "LICENSE",
     "README.md",
-    "build/",
+    "dist/",
     "src/"
   ],
   "repository": {
