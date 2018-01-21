@@ -12,51 +12,66 @@ import {
 } from './shared/dates';
 
 export default class Clock extends Component {
-  renderFace() {
+  renderMinuteMarks() {
+    if (!this.props.renderMinuteMarks) {
+      return null;
+    }
+
     const {
-      renderMinuteMarks,
-      renderHourMarks,
       minuteMarksLength,
       minuteMarksWidth,
-      hourMarksLength,
-      hourMarksWidth,
+      renderHourMarks,
     } = this.props;
 
-    const marks = [];
+    const minuteMarks = [];
+    for (let i = 1; i <= 60; i += 1) {
+      const isHourMark = renderHourMarks && !(i % 5);
 
-    if (renderMinuteMarks) {
-      for (let i = 1; i <= 60; i += 1) {
-        const isHour = renderHourMarks && !(i % 5);
-        const width = isHour ? hourMarksWidth : minuteMarksWidth;
-        const length = isHour ? hourMarksLength : minuteMarksLength;
-
-        marks.push(
+      if (!isHourMark) {
+        minuteMarks.push(
           <Mark
             angle={i * 6}
-            key={isHour ? `hour_${Math.floor(i / 5)}` : `minute_${i}`}
-            length={length}
-            name={isHour ? 'hour' : 'minute'}
-            width={width}
-          />,
-        );
-      }
-    } else if (renderHourMarks) {
-      for (let i = 1; i <= 12; i += 1) {
-        marks.push(
-          <Mark
-            angle={i * 30}
-            key={`hour_${i}`}
-            length={hourMarksLength}
-            name="hour"
-            width={hourMarksWidth}
+            key={`minute_${i}`}
+            length={minuteMarksLength}
+            name="minute"
+            width={minuteMarksWidth}
           />,
         );
       }
     }
+    return minuteMarks;
+  }
 
+  renderHourMarks() {
+    if (!this.props.renderHourMarks) {
+      return null;
+    }
+
+    const {
+      hourMarksLength,
+      hourMarksWidth,
+    } = this.props;
+
+    const hourMarks = [];
+    for (let i = 1; i <= 12; i += 1) {
+      hourMarks.push(
+        <Mark
+          angle={i * 30}
+          key={`hour_${i}`}
+          length={hourMarksLength}
+          name="hour"
+          width={hourMarksWidth}
+        />,
+      );
+    }
+    return hourMarks;
+  }
+
+  renderFace() {
     return (
       <div className="react-clock__face">
-        {marks}
+        {this.renderMinuteMarks()}
+        {this.renderHourMarks()}
       </div>
     );
   }
