@@ -11,6 +11,8 @@ import {
   getSeconds,
 } from './shared/dates';
 
+import { isHandLength, isHandWidth, isMarkLength, isMarkWidth } from './shared/propTypes';
+
 export default class Clock extends Component {
   renderMinuteMarks() {
     if (!this.props.renderMinuteMarks) {
@@ -202,23 +204,23 @@ Clock.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),
-  hourHandLength: PropTypes.number,
-  hourHandOppositeLength: PropTypes.number,
-  hourHandWidth: PropTypes.number,
-  hourMarksLength: PropTypes.number,
-  hourMarksWidth: PropTypes.number,
-  minuteHandLength: PropTypes.number,
-  minuteHandOppositeLength: PropTypes.number,
-  minuteHandWidth: PropTypes.number,
-  minuteMarksLength: PropTypes.number,
-  minuteMarksWidth: PropTypes.number,
+  hourHandLength: isHandLength,
+  hourHandOppositeLength: isHandLength,
+  hourHandWidth: isHandWidth,
+  hourMarksLength: isMarkLength,
+  hourMarksWidth: isMarkWidth,
+  minuteHandLength: isHandLength,
+  minuteHandOppositeLength: isHandLength,
+  minuteHandWidth: isHandWidth,
+  minuteMarksLength: isMarkLength,
+  minuteMarksWidth: isMarkWidth,
   renderHourMarks: PropTypes.bool,
   renderMinuteHand: PropTypes.bool,
   renderMinuteMarks: PropTypes.bool,
   renderSecondHand: PropTypes.bool,
-  secondHandLength: PropTypes.number,
-  secondHandOppositeLength: PropTypes.number,
-  secondHandWidth: PropTypes.number,
+  secondHandLength: isHandLength,
+  secondHandOppositeLength: isHandLength,
+  secondHandWidth: isHandWidth,
   size: PropTypes.number,
   value: PropTypes.oneOfType([
     PropTypes.string,

@@ -1,34 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { isMarkLength, isMarkWidth } from './shared/propTypes';
+
 const Mark = ({
   angle,
   length,
   name,
   width,
-}) => {
-  if (length > 100) {
-    throw new Error('Mark can\'t be longer than 100 (%).');
-  }
-
-  return (
+}) => (
+  <div
+    className={`react-clock__mark react-clock__${name}-mark`}
+    style={{
+      transform: `rotate(${angle}deg)`,
+    }}
+  >
     <div
-      className={`react-clock__mark react-clock__${name}-mark`}
+      className={`react-clock__mark__body react-clock__${name}-mark__body`}
       style={{
-        transform: `rotate(${angle}deg)`,
+        width: `${width}px`,
+        top: 0,
+        bottom: `${100 - (length / 2)}%`,
       }}
-    >
-      <div
-        className={`react-clock__mark__body react-clock__${name}-mark__body`}
-        style={{
-          width: `${width}px`,
-          top: 0,
-          bottom: `${100 - (length / 2)}%`,
-        }}
-      />
-    </div>
-  );
-};
+    />
+  </div>
+);
 
 Mark.defaultProps = {
   angle: 0,
@@ -38,9 +34,9 @@ Mark.defaultProps = {
 
 Mark.propTypes = {
   angle: PropTypes.number,
-  length: PropTypes.number,
-  name: PropTypes.string,
-  width: PropTypes.number,
+  length: isMarkLength,
+  name: PropTypes.string.isRequired,
+  width: isMarkWidth,
 };
 
 export default Mark;
