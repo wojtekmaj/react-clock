@@ -1,7 +1,9 @@
+import { isDefined } from './utils';
+
 export const isHandLength = (props, propName, componentName) => {
   const length = props[propName];
 
-  if (length !== null && length !== undefined) {
+  if (isDefined(length)) {
     if (typeof length !== 'number') {
       return new Error(`Invalid prop \`${propName}\` of type \`${typeof length}\` supplied to \`${componentName}\`, expected \`number\`.`);
     }
@@ -18,7 +20,7 @@ export const isHandLength = (props, propName, componentName) => {
 export const isHandWidth = (props, propName, componentName) => {
   const width = props[propName];
 
-  if (width !== null && width !== undefined) {
+  if (isDefined(width)) {
     if (typeof width !== 'number') {
       return new Error(`Invalid prop \`${propName}\` of type \`${typeof width}\` supplied to \`${componentName}\`, expected \`number\`.`);
     }
