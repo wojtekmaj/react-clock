@@ -4,7 +4,7 @@
 
 # React-Clock
 
-A component to display clock for your React application.
+An analog clock for your React app.
 
 ## tl;dr
 * Install by executing `npm install react-clock` or `yarn add react-clock`.
