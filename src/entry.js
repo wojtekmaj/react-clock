@@ -1,7 +1,6 @@
 import Clock from './Clock';
 
-// import './Clock.css';
-import './Clock.less';
+import './Clock.css';
 
 export default Clock;
 
