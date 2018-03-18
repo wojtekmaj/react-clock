@@ -1,4 +1,4 @@
-![downloads](https://img.shields.io/npm/dt/react-clock.svg) ![build](https://img.shields.io/travis/wojtekmaj/react-clock.svg) ![dependencies](https://img.shields.io/david/wojtekmaj/react-clock.svg
+![downloads](https://img.shields.io/npm/dt/react-clock.svg) ![build](https://img.shields.io/travis/wojtekmaj/react-clock/master.svg) ![dependencies](https://img.shields.io/david/wojtekmaj/react-clock.svg
 ) ![dev dependencies](https://img.shields.io/david/dev/wojtekmaj/react-clock.svg
 ) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
