@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Clock from 'react-clock/src/entry';
 
 import ValueOptions from './ValueOptions';
@@ -8,7 +8,7 @@ import './Test.less';
 
 import { formatTime } from './shared/dateFormatter';
 
-export default class Test extends Component {
+export default class Test extends PureComponent {
   state = {
     renderHourMarks: true,
     renderMinuteHand: true,
