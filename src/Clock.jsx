@@ -11,7 +11,7 @@ import {
   getSeconds,
 } from './shared/dates';
 
-import { isHandLength, isHandWidth, isMarkLength, isMarkWidth } from './shared/propTypes';
+import { isHandLength, isOppositeHandLength, isHandWidth, isMarkLength, isMarkWidth } from './shared/propTypes';
 
 export default class Clock extends Component {
   renderMinuteMarks() {
