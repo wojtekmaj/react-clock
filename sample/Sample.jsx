@@ -12,7 +12,7 @@ export default class Sample extends Component {
   componentDidMount() {
     setInterval(() => {
       const now = new Date();
-      this.setState({ value: now });
+      this.onChange(now);
     }, 1000);
   }
 
