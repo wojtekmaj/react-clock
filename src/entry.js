@@ -1,6 +1,7 @@
 import Clock from './Clock';
 
-import './Clock.less';
+/* eslint-disable */
+import './Clock.css';
 
 export default Clock;
 

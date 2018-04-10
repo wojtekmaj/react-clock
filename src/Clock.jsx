@@ -56,28 +56,16 @@ export default class Clock extends Component {
 
     const hourMarks = [];
     for (let i = 1; i <= 12; i += 1) {
-      if (this.props.showNumber) {
-        hourMarks.push(
-          <Mark
-            angle={i * 30}
-            key={`hour_${i}`}
-            number={i}
-            length={hourMarksLength}
-            name="hour"
-            width={hourMarksWidth}
-          />,
-        );
-      } else {
-        hourMarks.push(
-          <Mark
-            angle={i * 30}
-            key={`hour_${i}`}
-            length={hourMarksLength}
-            name="hour"
-            width={hourMarksWidth}
-          />,
-        );
-      }
+      hourMarks.push(
+        <Mark
+          angle={i * 30}
+          key={`hour_${i}`}
+          number={this.props.showNumber ? i : null}
+          length={hourMarksLength}
+          name="hour"
+          width={hourMarksWidth}
+        />,
+      );
     }
     return hourMarks;
   }

@@ -25,7 +25,7 @@ const Mark = ({
       }}
     />
 
-    {number ?
+    {number &&
       <div
         className="react-clock__mark__number"
         style={{
@@ -34,7 +34,8 @@ const Mark = ({
       }}
       >
         {number}
-      </div> : ''}
+      </div>
+    }
 
   </div>
 );
