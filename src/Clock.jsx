@@ -56,15 +56,28 @@ export default class Clock extends Component {
 
     const hourMarks = [];
     for (let i = 1; i <= 12; i += 1) {
-      hourMarks.push(
-        <Mark
-          angle={i * 30}
-          key={`hour_${i}`}
-          length={hourMarksLength}
-          name="hour"
-          width={hourMarksWidth}
-        />,
-      );
+      if (this.props.showNumber) {
+        hourMarks.push(
+          <Mark
+            angle={i * 30}
+            key={`hour_${i}`}
+            number={i}
+            length={hourMarksLength}
+            name="hour"
+            width={hourMarksWidth}
+          />,
+        );
+      } else {
+        hourMarks.push(
+          <Mark
+            angle={i * 30}
+            key={`hour_${i}`}
+            length={hourMarksLength}
+            name="hour"
+            width={hourMarksWidth}
+          />,
+        );
+      }
     }
     return hourMarks;
   }
@@ -222,6 +235,7 @@ Clock.propTypes = {
   secondHandOppositeLength: isOppositeHandLength,
   secondHandWidth: isHandWidth,
   size: PropTypes.number,
+  showNumber: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Date),
