@@ -1,6 +1,7 @@
 import Clock from './Clock';
 
-/* eslint-disable */
+// File is created during build phase and placed in dist directory
+// eslint-disable-next-line import/no-unresolved
 import './Clock.css';
 
 export default Clock;
