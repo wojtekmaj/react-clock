@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
-import Clock from 'react-clock/src/entry';
+import Clock from 'react-clock/src/entry.nostyle';
+import 'react-clock/src/Clock.less';
 
 import ValueOptions from './ValueOptions';
 import ViewOptions from './ViewOptions';
@@ -13,6 +14,7 @@ export default class Test extends PureComponent {
     renderHourMarks: true,
     renderMinuteHand: true,
     renderMinuteMarks: true,
+    renderNumbers: true,
     renderSecondHand: true,
     value: new Date(),
   }
@@ -46,6 +48,7 @@ export default class Test extends PureComponent {
       renderHourMarks,
       renderMinuteHand,
       renderMinuteMarks,
+      renderNumbers,
       renderSecondHand,
       value,
     } = this.state;
@@ -68,6 +71,7 @@ export default class Test extends PureComponent {
               renderHourMarks={renderHourMarks}
               renderMinuteHand={renderMinuteHand}
               renderMinuteMarks={renderMinuteMarks}
+              renderNumbers={renderNumbers}
               renderSecondHand={renderSecondHand}
             />
           </aside>
@@ -87,6 +91,7 @@ export default class Test extends PureComponent {
                 renderHourMarks={renderHourMarks}
                 renderMinuteHand={renderMinuteHand}
                 renderMinuteMarks={renderMinuteMarks}
+                renderNumbers={renderNumbers}
                 renderSecondHand={renderSecondHand}
                 size={200}
                 value={value}

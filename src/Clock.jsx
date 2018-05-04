@@ -52,6 +52,7 @@ export default class Clock extends Component {
     const {
       hourMarksLength,
       hourMarksWidth,
+      renderNumbers,
     } = this.props;
 
     const hourMarks = [];
@@ -60,7 +61,7 @@ export default class Clock extends Component {
         <Mark
           angle={i * 30}
           key={`hour_${i}`}
-          number={this.props.showNumber ? i : null}
+          number={renderNumbers ? i : null}
           length={hourMarksLength}
           name="hour"
           width={hourMarksWidth}
@@ -218,12 +219,12 @@ Clock.propTypes = {
   renderHourMarks: PropTypes.bool,
   renderMinuteHand: PropTypes.bool,
   renderMinuteMarks: PropTypes.bool,
+  renderNumbers: PropTypes.bool,
   renderSecondHand: PropTypes.bool,
   secondHandLength: isHandLength,
   secondHandOppositeLength: isOppositeHandLength,
   secondHandWidth: isHandWidth,
   size: PropTypes.number,
-  showNumber: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Date),

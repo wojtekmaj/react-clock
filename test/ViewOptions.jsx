@@ -26,11 +26,18 @@ export default class ViewOptions extends PureComponent {
     this.props.setState({ renderMinuteMarks: checked });
   }
 
+  onRenderNumbersChange = (event) => {
+    const { checked } = event.target;
+
+    this.props.setState({ renderNumbers: checked });
+  }
+
   render() {
     const {
       renderHourMarks,
       renderMinuteHand,
       renderMinuteMarks,
+      renderNumbers,
       renderSecondHand,
     } = this.props;
 
@@ -77,6 +84,16 @@ export default class ViewOptions extends PureComponent {
           />
           <label htmlFor="renderMinuteMarks">Show minute marks</label>
         </div>
+
+        <div>
+          <input
+            id="renderNumbers"
+            type="checkbox"
+            checked={renderNumbers}
+            onChange={this.onRenderNumbersChange}
+          />
+          <label htmlFor="renderNumbers">Show numbers</label>
+        </div>
       </fieldset>
     );
   }
@@ -86,6 +103,7 @@ ViewOptions.propTypes = {
   renderHourMarks: PropTypes.bool.isRequired,
   renderMinuteHand: PropTypes.bool.isRequired,
   renderMinuteMarks: PropTypes.bool.isRequired,
+  renderNumbers: PropTypes.bool.isRequired,
   renderSecondHand: PropTypes.bool.isRequired,
   setState: PropTypes.func.isRequired,
 };
