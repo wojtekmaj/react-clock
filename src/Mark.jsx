@@ -8,6 +8,7 @@ const Mark = ({
   length,
   name,
   width,
+  number,
 }) => (
   <div
     className={`react-clock__mark react-clock__${name}-mark`}
@@ -23,6 +24,19 @@ const Mark = ({
         bottom: `${100 - (length / 2)}%`,
       }}
     />
+
+    {number &&
+      <div
+        className="react-clock__mark__number"
+        style={{
+      transform: `rotate(-${angle}deg)`,
+      top: `${length / 2}%`,
+      }}
+      >
+        {number}
+      </div>
+    }
+
   </div>
 );
 
@@ -37,6 +51,7 @@ Mark.propTypes = {
   length: isMarkLength,
   name: PropTypes.string.isRequired,
   width: isMarkWidth,
+  number: PropTypes.number,
 };
 
 export default Mark;

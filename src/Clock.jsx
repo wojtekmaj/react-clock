@@ -60,6 +60,7 @@ export default class Clock extends Component {
         <Mark
           angle={i * 30}
           key={`hour_${i}`}
+          number={this.props.showNumber ? i : null}
           length={hourMarksLength}
           name="hour"
           width={hourMarksWidth}
@@ -222,6 +223,7 @@ Clock.propTypes = {
   secondHandOppositeLength: isOppositeHandLength,
   secondHandWidth: isHandWidth,
   size: PropTypes.number,
+  showNumber: PropTypes.bool,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.instanceOf(Date),
