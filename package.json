@@ -36,6 +36,12 @@
     "name": "Wojciech Maj",
     "email": "kontakt@wojtekmaj.pl"
   },
+  "contributors": [
+    {
+      "name": "Yin Hengli",
+      "email": "yinhengliben@gmail.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "merge-class-names": "^1.1.1",
