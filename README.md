@@ -82,6 +82,7 @@ Displays a complete clock.
 |renderHourMarks|Defines whether hour marks shall be rendered. Defaults to `true`.|`false`|
 |renderMinuteHand|Defines whether minute hand shall be rendered. Defaults to `true`.|`false`|
 |renderMinuteMarks|Defines whether minute marks shall be rendered. Defaults to `true`.|`false`|
+|renderNumbers|Defined whether numbers shall be rendered. Defaults to `false`.|`true`|
 |renderSecondHand|Defines whether second hand shall be rendered. Defaults to `true`.|`false`|
 |secondHandLength|Defines the length of a second hand, in %. Defaults to `90`.|`80`|
 |secondHandOppositeLength|Defines the length of the part of a second hand on the opposite side the hand is pointing to, in %. Defaults to `10`.|`20`|
