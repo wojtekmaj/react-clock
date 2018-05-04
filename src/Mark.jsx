@@ -24,19 +24,17 @@ const Mark = ({
         bottom: `${100 - (length / 2)}%`,
       }}
     />
-
-    {number &&
+    {number && (
       <div
         className="react-clock__mark__number"
         style={{
-      transform: `rotate(-${angle}deg)`,
-      top: `${length / 2}%`,
-      }}
+          transform: `rotate(-${angle}deg)`,
+          top: `${length / 2}%`,
+        }}
       >
         {number}
       </div>
-    }
-
+    )}
   </div>
 );
 
