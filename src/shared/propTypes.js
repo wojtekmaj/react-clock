@@ -1,7 +1,7 @@
 import { isDefined } from './utils';
 
 export const isHandLength = (props, propName, componentName) => {
-  const length = props[propName];
+  const { [propName]: length } = props;
 
   if (isDefined(length)) {
     if (typeof length !== 'number') {
@@ -18,7 +18,7 @@ export const isHandLength = (props, propName, componentName) => {
 };
 
 export const isOppositeHandLength = (props, propName, componentName) => {
-  const length = props[propName];
+  const { [propName]: length } = props;
 
   if (isDefined(length)) {
     if (typeof length !== 'number') {
@@ -35,7 +35,7 @@ export const isOppositeHandLength = (props, propName, componentName) => {
 };
 
 export const isHandWidth = (props, propName, componentName) => {
-  const width = props[propName];
+  const { [propName]: width } = props;
 
   if (isDefined(width)) {
     if (typeof width !== 'number') {
@@ -54,4 +54,3 @@ export const isHandWidth = (props, propName, componentName) => {
 export const isMarkLength = isHandLength;
 
 export const isMarkWidth = isHandWidth;
-

@@ -36,7 +36,9 @@ export const getSeconds = (date) => {
     if (hourRegExp.test(date)) {
       const [, , secondString] = date.split(':');
       return parseInt(secondString, 10);
-    } else if (hourOptionalSecondsRegExp.test(date)) {
+    }
+
+    if (hourOptionalSecondsRegExp.test(date)) {
       return 0;
     }
   }
