@@ -91,6 +91,31 @@ describe('Clock', () => {
       expect(minuteMarks).toHaveLength(60 - 12);
     });
 
+    it('does not have hour numbers rendered by default', () => {
+      const component = mount(
+        <Clock />
+      );
+
+      const hourMarkNumbers = component.find('.react-clock__mark__number');
+
+      expect(hourMarkNumbers).toHaveLength(0);
+    });
+
+    it('has hour numbers given renderNumbers flag', () => {
+      const component = mount(
+        <Clock renderNumbers />
+      );
+
+      const hourMarks = component.find('.react-clock__hour-mark');
+
+      hourMarks.forEach((hourMark, index) => {
+        const hourMarkNumber = hourMark.find('.react-clock__mark__number');
+
+        expect(hourMarkNumber).toHaveLength(1);
+        expect(hourMarkNumber.text()).toBe(`${index + 1}`);
+      });
+    });
+
     it('has only minute marks when renderHourMarks is false', () => {
       const component = mount(
         <Clock renderHourMarks={false} />
