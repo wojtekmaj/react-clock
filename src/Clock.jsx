@@ -11,11 +11,19 @@ import {
   getSeconds,
 } from './shared/dates';
 
-import { isHandLength, isOppositeHandLength, isHandWidth, isMarkLength, isMarkWidth } from './shared/propTypes';
+import {
+  isHandLength,
+  isOppositeHandLength,
+  isHandWidth,
+  isMarkLength,
+  isMarkWidth,
+} from './shared/propTypes';
 
 export default class Clock extends Component {
   renderMinuteMarks() {
-    if (!this.props.renderMinuteMarks) {
+    const { renderMinuteMarks } = this.props;
+
+    if (!renderMinuteMarks) {
       return null;
     }
 
@@ -45,7 +53,9 @@ export default class Clock extends Component {
   }
 
   renderHourMarks() {
-    if (!this.props.renderHourMarks) {
+    const { renderHourMarks } = this.props;
+
+    if (!renderHourMarks) {
       return null;
     }
 
@@ -89,9 +99,9 @@ export default class Clock extends Component {
     } = this.props;
 
     const angle = value ? (
-      (getHours(value) * 30) +
-      (getMinutes(value) / 2) +
-      (getSeconds(value) / 600)
+      (getHours(value) * 30)
+      + (getMinutes(value) / 2)
+      + (getSeconds(value) / 600)
     ) : 0;
 
     return (
@@ -106,7 +116,9 @@ export default class Clock extends Component {
   }
 
   renderMinuteHand() {
-    if (!this.props.renderMinuteHand) {
+    const { renderMinuteHand } = this.props;
+
+    if (!renderMinuteHand) {
       return null;
     }
 
@@ -118,9 +130,9 @@ export default class Clock extends Component {
     } = this.props;
 
     const angle = value ? (
-      (getHours(value) * 360) +
-      (getMinutes(value) * 6) +
-      (getSeconds(value) / 10)
+      (getHours(value) * 360)
+      + (getMinutes(value) * 6)
+      + (getSeconds(value) / 10)
     ) : 0;
 
     return (
@@ -135,7 +147,9 @@ export default class Clock extends Component {
   }
 
   renderSecondHand() {
-    if (!this.props.renderSecondHand) {
+    const { renderSecondHand } = this.props;
+
+    if (!renderSecondHand) {
       return null;
     }
 
@@ -147,8 +161,8 @@ export default class Clock extends Component {
     } = this.props;
 
     const angle = value ? (
-      (getMinutes(value) * 360) +
-      (getSeconds(value) * 6)
+      (getMinutes(value) * 360)
+      + (getSeconds(value) * 6)
     ) : 0;
 
     return (
@@ -163,11 +177,11 @@ export default class Clock extends Component {
   }
 
   render() {
-    const { size, value } = this.props;
+    const { className, size, value } = this.props;
 
     return (
       <time
-        className={mergeClassNames('react-clock', this.props.className)}
+        className={mergeClassNames('react-clock', className)}
         dateTime={value instanceof Date ? value.toISOString() : value}
         style={{
           width: `${size}px`,
