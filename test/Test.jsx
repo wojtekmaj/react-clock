@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
+// eslint-disable-next-line import/no-unresolved
 import Clock from 'react-clock/src/entry.nostyle';
+// eslint-disable-next-line import/no-unresolved
 import 'react-clock/src/Clock.less';
 
 import ValueOptions from './ValueOptions';
