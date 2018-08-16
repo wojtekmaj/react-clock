@@ -10,24 +10,38 @@ export default class ValueOptions extends PureComponent {
     this.setValue(value);
   }
 
-  setValue = value => this.props.setState({ value });
+  setValue = (value) => {
+    const { setState } = this.props;
+
+    setState({ value });
+  }
 
   render() {
     const { value } = this.props;
 
     return (
       <fieldset id="valueOptions">
-        <legend htmlFor="valueOptions">Set hour externally</legend>
+        <legend htmlFor="valueOptions">
+          Set hour externally
+        </legend>
 
         <div>
-          <label htmlFor="hour">Hour</label>
+          <label htmlFor="hour">
+            Hour
+          </label>
           <input
             id="hour"
             onChange={this.onChange}
             type="time"
             value={value ? formatTime(value) : ''}
-          />&nbsp;
-          <button onClick={() => this.setValue(null)}>Clear</button>
+          />
+          &nbsp;
+          <button
+            type="button"
+            onClick={() => this.setValue(null)}
+          >
+            Clear
+          </button>
         </div>
       </fieldset>
     );

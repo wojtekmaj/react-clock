@@ -3,33 +3,43 @@ import PropTypes from 'prop-types';
 
 export default class ViewOptions extends PureComponent {
   onRenderMinuteHandChange = (event) => {
+    const { setState } = this.props;
+
     const { checked } = event.target;
 
-    this.props.setState({ renderMinuteHand: checked });
+    setState({ renderMinuteHand: checked });
   }
 
   onRenderSecondHandChange = (event) => {
+    const { setState } = this.props;
+
     const { checked } = event.target;
 
-    this.props.setState({ renderSecondHand: checked });
+    setState({ renderSecondHand: checked });
   }
 
   onRenderHourMarksChange = (event) => {
+    const { setState } = this.props;
+
     const { checked } = event.target;
 
-    this.props.setState({ renderHourMarks: checked });
+    setState({ renderHourMarks: checked });
   }
 
   onRenderMinuteMarksChange = (event) => {
+    const { setState } = this.props;
+
     const { checked } = event.target;
 
-    this.props.setState({ renderMinuteMarks: checked });
+    setState({ renderMinuteMarks: checked });
   }
 
   onRenderNumbersChange = (event) => {
+    const { setState } = this.props;
+
     const { checked } = event.target;
 
-    this.props.setState({ renderNumbers: checked });
+    setState({ renderNumbers: checked });
   }
 
   render() {
@@ -43,7 +53,9 @@ export default class ViewOptions extends PureComponent {
 
     return (
       <fieldset id="viewoptions">
-        <legend htmlFor="viewoptions">View options</legend>
+        <legend htmlFor="viewoptions">
+          View options
+        </legend>
 
         <div>
           <input
@@ -52,7 +64,9 @@ export default class ViewOptions extends PureComponent {
             checked={renderMinuteHand}
             onChange={this.onRenderMinuteHandChange}
           />
-          <label htmlFor="renderMinuteHand">Show minute hand</label>
+          <label htmlFor="renderMinuteHand">
+            Show minute hand
+          </label>
         </div>
 
         <div>
@@ -62,7 +76,9 @@ export default class ViewOptions extends PureComponent {
             checked={renderSecondHand}
             onChange={this.onRenderSecondHandChange}
           />
-          <label htmlFor="renderSecondHand">Show second hand</label>
+          <label htmlFor="renderSecondHand">
+            Show second hand
+          </label>
         </div>
 
         <div>
@@ -72,7 +88,9 @@ export default class ViewOptions extends PureComponent {
             checked={renderHourMarks}
             onChange={this.onRenderHourMarksChange}
           />
-          <label htmlFor="renderHourMarks">Show hour marks</label>
+          <label htmlFor="renderHourMarks">
+            Show hour marks
+          </label>
         </div>
 
         <div>
@@ -82,7 +100,9 @@ export default class ViewOptions extends PureComponent {
             checked={renderMinuteMarks}
             onChange={this.onRenderMinuteMarksChange}
           />
-          <label htmlFor="renderMinuteMarks">Show minute marks</label>
+          <label htmlFor="renderMinuteMarks">
+            Show minute marks
+          </label>
         </div>
 
         <div>
@@ -92,7 +112,9 @@ export default class ViewOptions extends PureComponent {
             checked={renderNumbers}
             onChange={this.onRenderNumbersChange}
           />
-          <label htmlFor="renderNumbers">Show numbers</label>
+          <label htmlFor="renderNumbers">
+            Show numbers
+          </label>
         </div>
       </fieldset>
     );

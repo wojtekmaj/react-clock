@@ -39,7 +39,10 @@ export default class Test extends PureComponent {
     };
 
     return (
-      <p>Current time: {value ? renderTime(value) : '(none)'}</p>
+      <p>
+Current time:
+        {value ? renderTime(value) : '(none)'}
+      </p>
     );
   }
 
@@ -58,7 +61,9 @@ export default class Test extends PureComponent {
     return (
       <div className="Test">
         <header>
-          <h1>react-clock test page</h1>
+          <h1>
+react-clock test page
+          </h1>
         </header>
         <div className="Test__container">
           <aside className="Test__container__options">
