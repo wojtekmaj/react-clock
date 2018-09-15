@@ -3,6 +3,7 @@
   "version": "2.3.0",
   "description": "An analog clock for your React app.",
   "main": "dist/entry.js",
+  "types": "./index.d.ts",
   "es6": "src/entry.js",
   "scripts": {
     "build": "yarn run build-js && yarn run copy-styles && yarn run build-styles",
