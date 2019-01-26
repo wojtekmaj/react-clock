@@ -12,5 +12,16 @@
     "prefer-destructuring": "warn",
     "prefer-spread": "warn",
     "react/require-default-props": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "sample/**",
+        "test/**"
+      ],
+      "rules": {
+        "import/no-unresolved": "off"
+      }
+    }
+  ]
 }
