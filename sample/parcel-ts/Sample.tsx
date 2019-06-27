@@ -1,11 +1,14 @@
-import * as React from 'react';
-import { render } from 'react-dom';
+import React, { Component } from 'react';
 import Clock from 'react-clock';
 
 import './Sample.less';
 
-export default class Sample extends React.Component<{}, {value: Date}> {
-  public state = {
+interface State {
+  value: Date;
+}
+
+export default class Sample extends Component<{}, State> {
+  state = {
     value: new Date(),
   };
 
@@ -19,9 +22,9 @@ export default class Sample extends React.Component<{}, {value: Date}> {
     );
   }
 
-  public onChange = (value: Date) => this.setState({ value });
+  onChange = (value: Date) => this.setState({ value });
 
-  public render() {
+  render() {
     const { value } = this.state;
 
     return (
@@ -41,5 +44,3 @@ export default class Sample extends React.Component<{}, {value: Date}> {
     );
   }
 }
-
-render(<Sample />, document.getElementById('react-container'));
