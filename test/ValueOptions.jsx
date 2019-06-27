@@ -1,51 +1,48 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import { formatTime } from './shared/dateFormatter';
 
-export default class ValueOptions extends PureComponent {
-  onChange = (event) => {
-    const { value } = event.target;
-
-    this.setValue(value);
+export default function ValueOptions({
+  setState,
+  value,
+}) {
+  function setValue(nextValue) {
+    setState({ value: nextValue });
   }
 
-  setValue = (value) => {
-    const { setState } = this.props;
+  function onChange(event) {
+    const { value: nextValue } = event.target;
 
-    setState({ value });
+    setValue(nextValue);
   }
 
-  render() {
-    const { value } = this.props;
+  return (
+    <fieldset id="valueOptions">
+      <legend htmlFor="valueOptions">
+        Set hour externally
+      </legend>
 
-    return (
-      <fieldset id="valueOptions">
-        <legend htmlFor="valueOptions">
-          Set hour externally
-        </legend>
-
-        <div>
-          <label htmlFor="hour">
-            Hour
-          </label>
-          <input
-            id="hour"
-            onChange={this.onChange}
-            type="time"
-            value={value ? formatTime(value) : ''}
-          />
-          &nbsp;
-          <button
-            type="button"
-            onClick={() => this.setValue(null)}
-          >
-            Clear
-          </button>
-        </div>
-      </fieldset>
-    );
-  }
+      <div>
+        <label htmlFor="hour">
+          Hour
+        </label>
+        <input
+          id="hour"
+          onChange={onChange}
+          type="time"
+          value={value ? formatTime(value) : ''}
+        />
+        &nbsp;
+        <button
+          type="button"
+          onClick={() => setValue(null)}
+        >
+          Clear
+        </button>
+      </div>
+    </fieldset>
+  );
 }
 
 ValueOptions.propTypes = {
