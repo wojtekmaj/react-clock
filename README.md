@@ -66,29 +66,29 @@ Displays a complete clock.
 
 #### Props
 
-|Prop name|Description|Example values|
-|----|----|----|
-|className|Defines class name(s) that will be added along with "react-clock" to the main React-Clock `<time>` element.|<ul><li>String: `"class1 class2"`</li><li>Array of strings: `["class1", "class2 class3"]`</li></ul>|
-|hourHandLength|Defines the length of an hour hand, in %. Defaults to `50`.|`80`|
-|hourHandOppositeLength|Defines the length of the part of an hour hand on the opposite side the hand is pointing to, in %. Defaults to `10`.|`20`|
-|hourHandWidth|Defines the width of an hour hand, in pixels. Defaults to `4`.|`3`|
-|hourMarksLength|Defines the length of hour marks, in %. Defaults to `10`.|`8`|
-|hourMarksWidth|Defines the width of hour marks, in pixels. Defaults to `3`.|`2`|
-|minuteHandLength|Defines the length of a minute hand, in %. Defaults to `70`.|`80`|
-|minuteHandOppositeLength|Defines the length of the part of a minute hand on the opposite side the hand is pointing to, in %. Defaults to `10`.|`20`|
-|minuteHandWidth|Defines the width of a minute hand, in pixels. Defaults to `2`.|`3`|
-|minuteMarksLength|Defines the length of minute marks, in %. Defaults to `6`.|`8`|
-|minuteMarksWidth|Defines the width of a minute hand, in pixels. Defaults to `1`.|`2`|
-|renderHourMarks|Defines whether hour marks shall be rendered. Defaults to `true`.|`false`|
-|renderMinuteHand|Defines whether minute hand shall be rendered. Defaults to `true`.|`false`|
-|renderMinuteMarks|Defines whether minute marks shall be rendered. Defaults to `true`.|`false`|
-|renderNumbers|Defined whether numbers shall be rendered. Defaults to `false`.|`true`|
-|renderSecondHand|Defines whether second hand shall be rendered. Defaults to `true`.|`false`|
-|secondHandLength|Defines the length of a second hand, in %. Defaults to `90`.|`80`|
-|secondHandOppositeLength|Defines the length of the part of a second hand on the opposite side the hand is pointing to, in %. Defaults to `10`.|`20`|
-|secondHandWidth|Defines the width of a second hand, in pixels. Defaults to `1`.|`2`|
-|size|Defines the size of the clock, in pixels. Defaults to `150`.|`250`|
-|value|Defines the value of the clock. Must be provided.|Date: `new Date()`|
+|Prop name|Description|Default value|Example values|
+|----|----|----|----|
+|className|Class name(s) that will be added along with `"react-clock"` to the main React-Clock `<time>` element.|n/a|<ul><li>String: `"class1 class2"`</li><li>Array of strings: `["class1", "class2 class3"]`</li></ul>|
+|hourHandLength|Hour hand length, in %.|`50`|`80`|
+|hourHandOppositeLength|The length of the part of an hour hand on the opposite side the hand is pointing to, in %.|`10`|`20`|
+|hourHandWidth|Hour hand width, in pixels.|`4`|`3`|
+|hourMarksLength|Hour marks length, in %.|`10`|`8`|
+|hourMarksWidth|Hour marks width, in pixels.|`3`|`2`|
+|minuteHandLength|Minute hand length, in %.|`70`|`80`|
+|minuteHandOppositeLength|The length of the part of a minute hand on the opposite side the hand is pointing to, in %.|`10`|`20`|
+|minuteHandWidth|Minute hand width, in pixels.|`2`|`3`|
+|minuteMarksLength|Minute marks length, in %.|`6`|`8`|
+|minuteMarksWidth|Minute marks width, in pixels.|`1`|`2`|
+|renderHourMarks|Whether hour marks shall be rendered.|`true`|`false`|
+|renderMinuteHand|Whether minute hand shall be rendered.|`true`|`false`|
+|renderMinuteMarks|Whether minute marks shall be rendered.|`true`|`false`|
+|renderNumbers|Whether numbers shall be rendered.|`false`|`true`|
+|renderSecondHand|Whether second hand shall be rendered.|`true`|`false`|
+|secondHandLength|Second hand length, in %.|`90`|`80`|
+|secondHandOppositeLength|The length of the part of a second hand on the opposite side the hand is pointing to, in %.|`10`|`20`|
+|secondHandWidth|Second hand width, in pixels.|`1`|`2`|
+|size|Clock size, in pixels.|`150`|`250`|
+|value|Clock value. Must be provided.|n/a|Date: `new Date()`|
 
 ## License
 
