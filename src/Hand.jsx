@@ -36,8 +36,8 @@ Hand.defaultProps = {
 
 Hand.propTypes = {
   angle: PropTypes.number,
-  name: PropTypes.string.isRequired,
   length: isHandLength,
+  name: PropTypes.string.isRequired,
   oppositeLength: isHandLength,
   width: PropTypes.number,
 };

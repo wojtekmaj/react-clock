@@ -30,7 +30,7 @@ describe('Hand', () => {
 
   it('renders properly angled hand given angle prop', () => {
     const component = shallow(
-      <Hand name="minute" angle={15} />
+      <Hand angle={15} name="minute" />
     );
 
     const hand = component.find('.react-clock__hand');
@@ -50,7 +50,7 @@ describe('Hand', () => {
 
   it('renders hand with proper length given length prop', () => {
     const component = shallow(
-      <Hand name="minute" length={50} />
+      <Hand length={50} name="minute" />
     );
 
     const handBody = component.find('.react-clock__hand__body');

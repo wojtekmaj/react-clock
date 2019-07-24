@@ -47,10 +47,10 @@ export default function ViewOptions({
 
       <div>
         <input
-          id="renderMinuteHand"
-          type="checkbox"
           checked={renderMinuteHand}
+          id="renderMinuteHand"
           onChange={onRenderMinuteHandChange}
+          type="checkbox"
         />
         <label htmlFor="renderMinuteHand">
           Show minute hand
@@ -59,10 +59,10 @@ export default function ViewOptions({
 
       <div>
         <input
-          id="renderSecondHand"
-          type="checkbox"
           checked={renderSecondHand}
+          id="renderSecondHand"
           onChange={onRenderSecondHandChange}
+          type="checkbox"
         />
         <label htmlFor="renderSecondHand">
           Show second hand
@@ -71,10 +71,10 @@ export default function ViewOptions({
 
       <div>
         <input
-          id="renderHourMarks"
-          type="checkbox"
           checked={renderHourMarks}
+          id="renderHourMarks"
           onChange={onRenderHourMarksChange}
+          type="checkbox"
         />
         <label htmlFor="renderHourMarks">
           Show hour marks
@@ -83,10 +83,10 @@ export default function ViewOptions({
 
       <div>
         <input
-          id="renderMinuteMarks"
-          type="checkbox"
           checked={renderMinuteMarks}
+          id="renderMinuteMarks"
           onChange={onRenderMinuteMarksChange}
+          type="checkbox"
         />
         <label htmlFor="renderMinuteMarks">
           Show minute marks
@@ -95,10 +95,10 @@ export default function ViewOptions({
 
       <div>
         <input
-          id="renderNumbers"
-          type="checkbox"
           checked={renderNumbers}
+          id="renderNumbers"
           onChange={onRenderNumbersChange}
+          type="checkbox"
         />
         <label htmlFor="renderNumbers">
           Show numbers

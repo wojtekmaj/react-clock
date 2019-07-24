@@ -48,8 +48,8 @@ Mark.propTypes = {
   angle: PropTypes.number,
   length: isMarkLength,
   name: PropTypes.string.isRequired,
-  width: isMarkWidth,
   number: PropTypes.number,
+  width: isMarkWidth,
 };
 
 export default Mark;

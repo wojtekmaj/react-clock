@@ -73,12 +73,12 @@ export default class Test extends PureComponent {
               value={value}
             />
             <ViewOptions
-              setState={setState}
               renderHourMarks={renderHourMarks}
               renderMinuteHand={renderMinuteHand}
               renderMinuteMarks={renderMinuteMarks}
               renderNumbers={renderNumbers}
               renderSecondHand={renderSecondHand}
+              setState={setState}
             />
           </aside>
           <main className="Test__container__content">

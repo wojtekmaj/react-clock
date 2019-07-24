@@ -30,7 +30,7 @@ describe('Mark', () => {
 
   it('renders properly angled mark given angle prop', () => {
     const component = shallow(
-      <Mark name="minute" angle={15} />
+      <Mark angle={15} name="minute" />
     );
 
     const mark = component.find('.react-clock__mark');
@@ -50,7 +50,7 @@ describe('Mark', () => {
 
   it('renders mark with proper length given length prop', () => {
     const component = shallow(
-      <Mark name="minute" length={50} />
+      <Mark length={50} name="minute" />
     );
 
     const markBody = component.find('.react-clock__mark__body');
@@ -100,7 +100,7 @@ describe('Mark', () => {
 
   it('renders properly angled mark given angle prop', () => {
     const component = shallow(
-      <Mark name="minute" number={1} angle={15} />
+      <Mark angle={15} name="minute" number={1} />
     );
 
     const markNumber = component.find('.react-clock__mark__number');

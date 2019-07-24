@@ -40,8 +40,8 @@ export default class Clock extends Component {
       if (!isHourMark) {
         minuteMarks.push(
           <Mark
-            angle={i * 6}
             key={`minute_${i}`}
+            angle={i * 6}
             length={minuteMarksLength}
             name="minute"
             width={minuteMarksWidth}
@@ -69,11 +69,11 @@ export default class Clock extends Component {
     for (let i = 1; i <= 12; i += 1) {
       hourMarks.push(
         <Mark
-          angle={i * 30}
           key={`hour_${i}`}
-          number={renderNumbers ? i : null}
+          angle={i * 30}
           length={hourMarksLength}
           name="hour"
+          number={renderNumbers ? i : null}
           width={hourMarksWidth}
         />,
       );
@@ -107,8 +107,8 @@ export default class Clock extends Component {
     return (
       <Hand
         angle={angle}
-        name="hour"
         length={hourHandLength}
+        name="hour"
         oppositeLength={hourHandOppositeLength}
         width={hourHandWidth}
       />
@@ -138,8 +138,8 @@ export default class Clock extends Component {
     return (
       <Hand
         angle={angle}
-        name="minute"
         length={minuteHandLength}
+        name="minute"
         oppositeLength={minuteHandOppositeLength}
         width={minuteHandWidth}
       />
@@ -167,9 +167,9 @@ export default class Clock extends Component {
 
     return (
       <Hand
-        name="second"
         angle={angle}
         length={secondHandLength}
+        name="second"
         oppositeLength={secondHandOppositeLength}
         width={secondHandWidth}
       />
