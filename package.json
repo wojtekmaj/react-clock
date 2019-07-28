@@ -1,6 +1,6 @@
 {
   "name": "react-clock",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "An analog clock for your React app.",
   "main": "dist/entry.js",
   "source": "src/entry.js",
