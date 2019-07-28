@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import mergeClassNames from 'merge-class-names';
 
@@ -19,19 +19,33 @@ import {
   isMarkWidth,
 } from './shared/propTypes';
 
-export default class Clock extends Component {
-  renderMinuteMarks() {
-    const { renderMinuteMarks } = this.props;
-
+export default function Clock({
+  className,
+  hourHandLength,
+  hourHandOppositeLength,
+  hourHandWidth,
+  hourMarksLength,
+  hourMarksWidth,
+  minuteHandLength,
+  minuteHandOppositeLength,
+  minuteHandWidth,
+  minuteMarksLength,
+  minuteMarksWidth,
+  renderHourMarks,
+  renderMinuteHand,
+  renderMinuteMarks,
+  renderNumbers,
+  renderSecondHand,
+  secondHandLength,
+  secondHandOppositeLength,
+  secondHandWidth,
+  size,
+  value,
+}) {
+  function renderMinuteMarksFn() {
     if (!renderMinuteMarks) {
       return null;
     }
-
-    const {
-      minuteMarksLength,
-      minuteMarksWidth,
-      renderHourMarks,
-    } = this.props;
 
     const minuteMarks = [];
     for (let i = 1; i <= 60; i += 1) {
@@ -52,18 +66,10 @@ export default class Clock extends Component {
     return minuteMarks;
   }
 
-  renderHourMarks() {
-    const { renderHourMarks } = this.props;
-
+  function renderHourMarksFn() {
     if (!renderHourMarks) {
       return null;
     }
-
-    const {
-      hourMarksLength,
-      hourMarksWidth,
-      renderNumbers,
-    } = this.props;
 
     const hourMarks = [];
     for (let i = 1; i <= 12; i += 1) {
@@ -81,23 +87,16 @@ export default class Clock extends Component {
     return hourMarks;
   }
 
-  renderFace() {
+  function renderFace() {
     return (
       <div className="react-clock__face">
-        {this.renderMinuteMarks()}
-        {this.renderHourMarks()}
+        {renderMinuteMarksFn()}
+        {renderHourMarksFn()}
       </div>
     );
   }
 
-  renderHourHand() {
-    const {
-      hourHandWidth,
-      hourHandLength,
-      hourHandOppositeLength,
-      value,
-    } = this.props;
-
+  function renderHourHandFn() {
     const angle = value ? (
       (getHours(value) * 30)
       + (getMinutes(value) / 2)
@@ -115,19 +114,10 @@ export default class Clock extends Component {
     );
   }
 
-  renderMinuteHand() {
-    const { renderMinuteHand } = this.props;
-
+  function renderMinuteHandFn() {
     if (!renderMinuteHand) {
       return null;
     }
-
-    const {
-      minuteHandWidth,
-      minuteHandLength,
-      minuteHandOppositeLength,
-      value,
-    } = this.props;
 
     const angle = value ? (
       (getHours(value) * 360)
@@ -146,19 +136,10 @@ export default class Clock extends Component {
     );
   }
 
-  renderSecondHand() {
-    const { renderSecondHand } = this.props;
-
+  function renderSecondHandFn() {
     if (!renderSecondHand) {
       return null;
     }
-
-    const {
-      secondHandWidth,
-      secondHandLength,
-      secondHandOppositeLength,
-      value,
-    } = this.props;
 
     const angle = value ? (
       (getMinutes(value) * 360)
@@ -176,25 +157,21 @@ export default class Clock extends Component {
     );
   }
 
-  render() {
-    const { className, size, value } = this.props;
-
-    return (
-      <time
-        className={mergeClassNames('react-clock', className)}
-        dateTime={value instanceof Date ? value.toISOString() : value}
-        style={{
-          width: `${size}px`,
-          height: `${size}px`,
-        }}
-      >
-        {this.renderFace()}
-        {this.renderHourHand()}
-        {this.renderMinuteHand()}
-        {this.renderSecondHand()}
-      </time>
-    );
-  }
+  return (
+    <time
+      className={mergeClassNames('react-clock', className)}
+      dateTime={value instanceof Date ? value.toISOString() : value}
+      style={{
+        width: `${size}px`,
+        height: `${size}px`,
+      }}
+    >
+      {renderFace()}
+      {renderHourHandFn()}
+      {renderMinuteHandFn()}
+      {renderSecondHandFn()}
+    </time>
+  );
 }
 
 Clock.defaultProps = {

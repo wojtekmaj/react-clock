@@ -3,40 +3,42 @@ import PropTypes from 'prop-types';
 
 import { isMarkLength, isMarkWidth } from './shared/propTypes';
 
-const Mark = ({
+export default function Mark({
   angle,
   length,
   name,
   width,
   number,
-}) => (
-  <div
-    className={`react-clock__mark react-clock__${name}-mark`}
-    style={{
-      transform: `rotate(${angle}deg)`,
-    }}
-  >
+}) {
+  return (
     <div
-      className={`react-clock__mark__body react-clock__${name}-mark__body`}
+      className={`react-clock__mark react-clock__${name}-mark`}
       style={{
-        width: `${width}px`,
-        top: 0,
-        bottom: `${100 - (length / 2)}%`,
+        transform: `rotate(${angle}deg)`,
       }}
-    />
-    {number && (
+    >
       <div
-        className="react-clock__mark__number"
+        className={`react-clock__mark__body react-clock__${name}-mark__body`}
         style={{
-          transform: `rotate(-${angle}deg)`,
-          top: `${length / 2}%`,
+          width: `${width}px`,
+          top: 0,
+          bottom: `${100 - (length / 2)}%`,
         }}
-      >
-        {number}
-      </div>
-    )}
-  </div>
-);
+      />
+      {number && (
+        <div
+          className="react-clock__mark__number"
+          style={{
+            transform: `rotate(-${angle}deg)`,
+            top: `${length / 2}%`,
+          }}
+        >
+          {number}
+        </div>
+      )}
+    </div>
+  );
+}
 
 Mark.defaultProps = {
   angle: 0,
@@ -51,5 +53,3 @@ Mark.propTypes = {
   number: PropTypes.number,
   width: isMarkWidth,
 };
-
-export default Mark;
