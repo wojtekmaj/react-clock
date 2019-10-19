@@ -4,5 +4,14 @@ import {
   getSeconds,
 } from '../../src/shared/dates';
 
+function padStart(num) {
+  return `0${num}`.slice(-2);
+}
+
 // eslint-disable-next-line import/prefer-default-export
-export const formatTime = date => `${`0${getHours(date)}`.slice(-2)}:${`0${getMinutes(date)}`.slice(-2)}:${`0${getSeconds(date)}`.slice(-2)}`;
+export function formatTime(date) {
+  [getHours, getMinutes, getSeconds]
+    .map(fn => fn(date))
+    .map(padStart)
+    .join(':');
+}
