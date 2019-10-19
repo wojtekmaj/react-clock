@@ -7,7 +7,7 @@
   "types": "./index.d.ts",
   "scripts": {
     "build": "yarn build-js && yarn copy-styles && yarn build-styles",
-    "build-js": "babel src -d dist --ignore **/__tests__,**/**/__tests__",
+    "build-js": "babel src -d dist --ignore **/*.spec.js,**/*.spec.jsx",
     "build-styles": "lessc ./dist/Clock.less ./dist/Clock.css",
     "clean": "rimraf dist",
     "copy-styles": "node ./copy-styles.js",
