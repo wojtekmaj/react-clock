@@ -2,7 +2,7 @@ import {
   getHours,
   getMinutes,
   getSeconds,
-} from '../dates';
+} from './dates';
 
 describe('getHours', () => {
   it('returns proper hour for a given date', () => {

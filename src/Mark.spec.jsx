@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Mark from '../Mark';
+import Mark from './Mark';
 
 /* eslint-disable comma-dangle */
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Hand from '../Hand';
+import Hand from './Hand';
 
 /* eslint-disable comma-dangle */
 

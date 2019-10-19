@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 
-import Clock from '../Clock';
+import Clock from './Clock';
 
 /* eslint-disable comma-dangle */
 
