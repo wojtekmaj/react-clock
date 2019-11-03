@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { isHandLength } from './shared/propTypes';
 
 export default function Hand({
-  angle,
+  angle = 0,
   name,
-  length,
-  oppositeLength,
-  width,
+  length = 100,
+  oppositeLength = 10,
+  width = 1,
 }) {
   return (
     <div
@@ -28,13 +28,6 @@ export default function Hand({
     </div>
   );
 }
-
-Hand.defaultProps = {
-  angle: 0,
-  length: 100,
-  oppositeLength: 10,
-  width: 1,
-};
 
 Hand.propTypes = {
   angle: PropTypes.number,

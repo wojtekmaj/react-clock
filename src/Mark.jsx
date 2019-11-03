@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { isMarkLength, isMarkWidth } from './shared/propTypes';
 
 export default function Mark({
-  angle,
-  length,
+  angle = 0,
+  length = 10,
   name,
-  width,
+  width = 1,
   number,
 }) {
   return (
@@ -39,12 +39,6 @@ export default function Mark({
     </div>
   );
 }
-
-Mark.defaultProps = {
-  angle: 0,
-  length: 10,
-  width: 1,
-};
 
 Mark.propTypes = {
   angle: PropTypes.number,

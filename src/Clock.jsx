@@ -21,25 +21,25 @@ import {
 
 export default function Clock({
   className,
-  hourHandLength,
+  hourHandLength = 50,
   hourHandOppositeLength,
-  hourHandWidth,
-  hourMarksLength,
-  hourMarksWidth,
-  minuteHandLength,
+  hourHandWidth = 4,
+  hourMarksLength = 10,
+  hourMarksWidth = 3,
+  minuteHandLength = 70,
   minuteHandOppositeLength,
-  minuteHandWidth,
-  minuteMarksLength,
-  minuteMarksWidth,
-  renderHourMarks,
-  renderMinuteHand,
-  renderMinuteMarks,
+  minuteHandWidth = 2,
+  minuteMarksLength = 6,
+  minuteMarksWidth = 1,
+  renderHourMarks = true,
+  renderMinuteHand = true,
+  renderMinuteMarks = true,
   renderNumbers,
-  renderSecondHand,
-  secondHandLength,
+  renderSecondHand = true,
+  secondHandLength = 90,
   secondHandOppositeLength,
-  secondHandWidth,
-  size,
+  secondHandWidth = 1,
+  size = 150,
   value,
 }) {
   function renderMinuteMarksFn() {
@@ -173,24 +173,6 @@ export default function Clock({
     </time>
   );
 }
-
-Clock.defaultProps = {
-  hourHandLength: 50,
-  hourHandWidth: 4,
-  hourMarksLength: 10,
-  hourMarksWidth: 3,
-  minuteHandLength: 70,
-  minuteHandWidth: 2,
-  minuteMarksLength: 6,
-  minuteMarksWidth: 1,
-  renderHourMarks: true,
-  renderMinuteHand: true,
-  renderMinuteMarks: true,
-  renderSecondHand: true,
-  secondHandLength: 90,
-  secondHandWidth: 1,
-  size: 150,
-};
 
 Clock.propTypes = {
   className: PropTypes.oneOfType([
