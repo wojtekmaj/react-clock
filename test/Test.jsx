@@ -1,13 +1,12 @@
 import React, { PureComponent } from 'react';
 import Clock from 'react-clock/src/entry.nostyle';
 import 'react-clock/src/Clock.less';
+import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
 import ValueOptions from './ValueOptions';
 import ViewOptions from './ViewOptions';
 
 import './Test.less';
-
-import { formatTime } from './shared/dateFormatter';
 
 export default class Test extends PureComponent {
   state = {
@@ -33,7 +32,7 @@ export default class Test extends PureComponent {
 
     const renderTime = (timeToRender) => {
       if (timeToRender instanceof Date) {
-        return formatTime(timeToRender);
+        return getHoursMinutesSeconds(timeToRender);
       }
       return timeToRender;
     };
