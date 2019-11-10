@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { formatTime } from './shared/dateFormatter';
+import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
 export default function ValueOptions({
   setState,
@@ -31,7 +30,7 @@ export default function ValueOptions({
           id="hour"
           onChange={onChange}
           type="time"
-          value={value ? formatTime(value) : ''}
+          value={value ? getHoursMinutesSeconds(value) : ''}
         />
         &nbsp;
         <button
