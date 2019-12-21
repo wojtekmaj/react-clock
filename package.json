@@ -2,9 +2,9 @@
   "name": "react-clock",
   "version": "2.4.0",
   "description": "An analog clock for your React app.",
-  "main": "dist/umd/entry.js",
-  "module": "dist/esm/entry.js",
-  "source": "src/entry.js",
+  "main": "dist/umd/index.js",
+  "module": "dist/esm/index.js",
+  "source": "src/index.js",
   "sideEffects": false,
   "types": "./index.d.ts",
   "scripts": {
@@ -27,8 +27,7 @@
     ],
     "collectCoverageFrom": [
       "**/src/**.{js,jsx}",
-      "!**/src/entry.js",
-      "!**/src/entry.nostyle.js"
+      "!**/src/index.js"
     ]
   },
   "keywords": [
