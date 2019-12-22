@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Clock from 'react-clock/src/entry.nostyle';
+import Clock from 'react-clock/src';
 import 'react-clock/src/Clock.less';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
