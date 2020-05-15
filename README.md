@@ -26,31 +26,29 @@ Add React-Clock to your project by executing `npm install react-clock` or `yarn 
 Here's an example of basic usage:
 
 ```js
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Clock from 'react-clock';
 
-class MyApp extends Component {
-  state = {
-    date: new Date(),
-  }
+function MyApp() {
+  const [value, setValue] = useState(new Date());
 
-  componentDidMount() {
-    setInterval(
-      () => this.setState({ date: new Date() }),
+  useEffect(() => {
+    const interval = setInterval(
+      () => setValue(new Date()),
       1000
     );
-  }
 
-  render() {
-    return (
-      <div>
-        <p>Current time:</p>
-        <Clock
-          value={this.state.date}
-        />
-      </div>
-    );
-  }
+    return () => {
+      clearInterval(interval);
+    }
+  }, []);
+
+  return (
+    <div>
+      <p>Current time:</p>
+      <Clock value={value} />
+    </div>
+  )
 }
 ```
 
