@@ -6,7 +6,6 @@ import { getHours, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 import Hand from './Hand';
 import Mark from './Mark';
 
-
 import {
   isHandLength,
   isOppositeHandLength,
