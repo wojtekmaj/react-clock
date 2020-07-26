@@ -90,5 +90,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/wojtekmaj/react-clock.git"
-  }
+  },
+  "funding": "https://github.com/wojtekmaj/react-clock?sponsor=1"
 }
