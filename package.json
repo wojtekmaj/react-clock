@@ -1,6 +1,6 @@
 {
   "name": "react-clock",
-  "version": "3.0.0-beta",
+  "version": "3.0.0",
   "description": "An analog clock for your React app.",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
