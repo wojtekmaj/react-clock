@@ -5,4 +5,4 @@
  *
  * @param {*} variable Variable to check
  */
-export const isDefined = variable => typeof variable !== 'undefined';
+export const isDefined = (variable) => typeof variable !== 'undefined';

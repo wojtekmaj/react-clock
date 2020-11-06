@@ -15,7 +15,7 @@ export default class Sample extends Component {
     }, 1000);
   }
 
-  onChange = value => this.setState({ value })
+  onChange = (value) => this.setState({ value })
 
   render() {
     const { value } = this.state;

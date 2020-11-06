@@ -25,7 +25,7 @@ export default class Test extends PureComponent {
     }, 1000);
   }
 
-  onChange = value => this.setState({ value })
+  onChange = (value) => this.setState({ value })
 
   renderDebugInfo() {
     const { value } = this.state;
@@ -56,7 +56,7 @@ export default class Test extends PureComponent {
       value,
     } = this.state;
 
-    const setState = state => this.setState(state);
+    const setState = (state) => this.setState(state);
 
     return (
       <div className="Test">

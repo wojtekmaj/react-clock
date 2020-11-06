@@ -165,8 +165,8 @@ describe('Clock', () => {
   const minuteSecondAngle = minuteAngle / 60;
   const secondAngle = fullCircle / 60;
 
-  const getDeg = transform => parseFloat(transform.match(/rotate\(([0-9.]*)deg\)/)[1]);
-  const getAngle = hand => getDeg(hand.prop('style').transform) % 360;
+  const getDeg = (transform) => parseFloat(transform.match(/rotate\(([0-9.]*)deg\)/)[1]);
+  const getAngle = (hand) => getDeg(hand.prop('style').transform) % 360;
 
   describe('hour hand', () => {
     it('is rendered properly', () => {
