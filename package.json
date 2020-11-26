@@ -74,8 +74,8 @@
     "rimraf": "^3.0.0"
   },
   "peerDependencies": {
-    "react": ">=15.5",
-    "react-dom": ">=15.5"
+    "react": "^15.5.0 || ^16.0.0 || ^17.0.0-0",
+    "react-dom": "^15.5.0 || ^16.0.0 || ^17.0.0-0"
   },
   "files": [
     "LICENSE",
