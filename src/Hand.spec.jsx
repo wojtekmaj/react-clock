@@ -3,12 +3,10 @@ import { shallow } from 'enzyme';
 
 import Hand from './Hand';
 
-/* eslint-disable comma-dangle */
-
 describe('Hand', () => {
   it('renders a hand with given name', () => {
     const component = shallow(
-      <Hand name="minute" />
+      <Hand name="minute" />,
     );
 
     const hand = component.find('.react-clock__hand');
@@ -20,7 +18,7 @@ describe('Hand', () => {
 
   it('renders hand angled at 0° by default', () => {
     const component = shallow(
-      <Hand name="minute" />
+      <Hand name="minute" />,
     );
 
     const hand = component.find('.react-clock__hand');
@@ -30,7 +28,7 @@ describe('Hand', () => {
 
   it('renders properly angled hand given angle prop', () => {
     const component = shallow(
-      <Hand angle={15} name="minute" />
+      <Hand angle={15} name="minute" />,
     );
 
     const hand = component.find('.react-clock__hand');
@@ -40,7 +38,7 @@ describe('Hand', () => {
 
   it('renders hand with 100% length by default', () => {
     const component = shallow(
-      <Hand name="minute" />
+      <Hand name="minute" />,
     );
 
     const handBody = component.find('.react-clock__hand__body');
@@ -50,7 +48,7 @@ describe('Hand', () => {
 
   it('renders hand with proper length given length prop', () => {
     const component = shallow(
-      <Hand length={50} name="minute" />
+      <Hand length={50} name="minute" />,
     );
 
     const handBody = component.find('.react-clock__hand__body');
@@ -60,7 +58,7 @@ describe('Hand', () => {
 
   it('renders hand with 10% oppositeLength by default', () => {
     const component = shallow(
-      <Hand name="minute" />
+      <Hand name="minute" />,
     );
 
     const handBody = component.find('.react-clock__hand__body');
@@ -70,7 +68,7 @@ describe('Hand', () => {
 
   it('renders hand with proper oppositeLength given oppositeLength prop', () => {
     const component = shallow(
-      <Hand name="minute" oppositeLength={50} />
+      <Hand name="minute" oppositeLength={50} />,
     );
 
     const handBody = component.find('.react-clock__hand__body');
@@ -80,7 +78,7 @@ describe('Hand', () => {
 
   it('renders hand with 1px width by default', () => {
     const component = shallow(
-      <Hand name="minute" />
+      <Hand name="minute" />,
     );
 
     const handBody = component.find('.react-clock__hand__body');
@@ -90,7 +88,7 @@ describe('Hand', () => {
 
   it('renders hand with proper width given length prop', () => {
     const component = shallow(
-      <Hand name="minute" width={5} />
+      <Hand name="minute" width={5} />,
     );
 
     const handBody = component.find('.react-clock__hand__body');
