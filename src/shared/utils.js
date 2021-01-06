@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-
 /**
  * Checks whether a variable is defined.
  *
