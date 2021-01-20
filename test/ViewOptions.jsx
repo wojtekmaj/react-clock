@@ -7,36 +7,40 @@ export default function ViewOptions({
   renderMinuteMarks,
   renderNumbers,
   renderSecondHand,
-  setState,
+  setRenderHourMarks,
+  setRenderMinuteHand,
+  setRenderMinuteMarks,
+  setRenderNumbers,
+  setRenderSecondHand,
 }) {
   function onRenderMinuteHandChange(event) {
     const { checked } = event.target;
 
-    setState({ renderMinuteHand: checked });
+    setRenderMinuteHand(checked);
   }
 
   function onRenderSecondHandChange(event) {
     const { checked } = event.target;
 
-    setState({ renderSecondHand: checked });
+    setRenderSecondHand(checked);
   }
 
   function onRenderHourMarksChange(event) {
     const { checked } = event.target;
 
-    setState({ renderHourMarks: checked });
+    setRenderHourMarks(checked);
   }
 
   function onRenderMinuteMarksChange(event) {
     const { checked } = event.target;
 
-    setState({ renderMinuteMarks: checked });
+    setRenderMinuteMarks(checked);
   }
 
   function onRenderNumbersChange(event) {
     const { checked } = event.target;
 
-    setState({ renderNumbers: checked });
+    setRenderNumbers(checked);
   }
 
   return (
@@ -114,5 +118,9 @@ ViewOptions.propTypes = {
   renderMinuteMarks: PropTypes.bool.isRequired,
   renderNumbers: PropTypes.bool.isRequired,
   renderSecondHand: PropTypes.bool.isRequired,
-  setState: PropTypes.func.isRequired,
+  setRenderHourMarks: PropTypes.func.isRequired,
+  setRenderMinuteHand: PropTypes.func.isRequired,
+  setRenderMinuteMarks: PropTypes.func.isRequired,
+  setRenderNumbers: PropTypes.func.isRequired,
+  setRenderSecondHand: PropTypes.func.isRequired,
 };
