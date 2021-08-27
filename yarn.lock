@@ -3653,6 +3653,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-user-locale@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "get-user-locale@npm:1.4.0"
+  dependencies:
+    lodash.once: ^4.1.1
+  checksum: d27a6cf7b1aacdec1786c6877511efc956eb17810e10c55a408753af38f13b5d854f3a0033320f94a6046e95d3c0fc2248c950aeecfc181353599facd344b7e4
+  languageName: node
+  linkType: hard
+
 "getpass@npm:^0.1.1":
   version: 0.1.7
   resolution: "getpass@npm:0.1.7"
@@ -5002,6 +5011,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.once@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "lodash.once@npm:4.1.1"
+  checksum: d768fa9f9b4e1dc6453be99b753906f58990e0c45e7b2ca5a3b40a33111e5d17f6edf2f768786e2716af90a8e78f8f91431ab8435f761fef00f9b0c256f6d245
+  languageName: node
+  linkType: hard
+
 "lodash.truncate@npm:^4.4.2":
   version: 4.4.2
   resolution: "lodash.truncate@npm:4.4.2"
@@ -5827,6 +5843,7 @@ __metadata:
     enzyme: ^3.10.0
     eslint: ~7.19.0
     eslint-config-wojtekmaj: ^0.5.0
+    get-user-locale: ^1.4.0
     jest: ^27.0.0
     less: ^4.0.0
     merge-class-names: ^1.1.1

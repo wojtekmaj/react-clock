@@ -44,6 +44,6 @@ Mark.propTypes = {
   angle: PropTypes.number,
   length: isMarkLength,
   name: PropTypes.string.isRequired,
-  number: PropTypes.number,
+  number: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   width: isMarkWidth,
 };

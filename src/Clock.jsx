@@ -4,7 +4,8 @@ import mergeClassNames from 'merge-class-names';
 import { getHours, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 
 import Hand from './Hand';
-import Mark from './Mark';
+import MinuteMark from './MinuteMark';
+import HourMark from './HourMark';
 
 import {
   isHandLength,
@@ -16,11 +17,13 @@ import {
 
 export default function Clock({
   className,
+  formatHour,
   hourHandLength = 50,
   hourHandOppositeLength,
   hourHandWidth = 4,
   hourMarksLength = 10,
   hourMarksWidth = 3,
+  locale,
   minuteHandLength = 70,
   minuteHandOppositeLength,
   minuteHandWidth = 2,
@@ -48,7 +51,7 @@ export default function Clock({
 
       if (!isHourMark) {
         minuteMarks.push(
-          <Mark
+          <MinuteMark
             key={`minute_${i}`}
             angle={i * 6}
             length={minuteMarksLength}
@@ -69,10 +72,12 @@ export default function Clock({
     const hourMarks = [];
     for (let i = 1; i <= 12; i += 1) {
       hourMarks.push(
-        <Mark
+        <HourMark
           key={`hour_${i}`}
           angle={i * 30}
+          formatHour={formatHour}
           length={hourMarksLength}
+          locale={locale}
           name="hour"
           number={renderNumbers ? i : null}
           width={hourMarksWidth}
@@ -174,11 +179,13 @@ Clock.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]),
+  formatHour: PropTypes.func,
   hourHandLength: isHandLength,
   hourHandOppositeLength: isOppositeHandLength,
   hourHandWidth: isHandWidth,
   hourMarksLength: isMarkLength,
   hourMarksWidth: isMarkWidth,
+  locale: PropTypes.string,
   minuteHandLength: isHandLength,
   minuteHandOppositeLength: isOppositeHandLength,
   minuteHandWidth: isHandWidth,

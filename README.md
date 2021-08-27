@@ -71,11 +71,13 @@ Displays a complete clock.
 |Prop name|Description|Default value|Example values|
 |----|----|----|----|
 |className|Class name(s) that will be added along with `"react-clock"` to the main React-Clock `<time>` element.|n/a|<ul><li>String: `"class1 class2"`</li><li>Array of strings: `["class1", "class2 class3"]`</li></ul>|
+|formatHour|Function called to override default formatting of hour marks. Can be used to use your own formatting function.|(default formatter)|`(locale, hour) => formatHour(hour, 'HH')`|
 |hourHandLength|Hour hand length, in %.|`50`|`80`|
 |hourHandOppositeLength|The length of the part of an hour hand on the opposite side the hand is pointing to, in %.|`10`|`20`|
 |hourHandWidth|Hour hand width, in pixels.|`4`|`3`|
 |hourMarksLength|Hour marks length, in %.|`10`|`8`|
 |hourMarksWidth|Hour marks width, in pixels.|`3`|`2`|
+|locale|Locale that should be used by the clock. Can be any [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag).|User's browser settings|`"hu-HU"`|
 |minuteHandLength|Minute hand length, in %.|`70`|`80`|
 |minuteHandOppositeLength|The length of the part of a minute hand on the opposite side the hand is pointing to, in %.|`10`|`20`|
 |minuteHandWidth|Minute hand width, in pixels.|`2`|`3`|
