@@ -79,5 +79,6 @@
     "type": "git",
     "url": "https://github.com/wojtekmaj/react-clock.git"
   },
-  "funding": "https://github.com/wojtekmaj/react-clock?sponsor=1"
+  "funding": "https://github.com/wojtekmaj/react-clock?sponsor=1",
+  "packageManager": "yarn@3.1.0"
 }
