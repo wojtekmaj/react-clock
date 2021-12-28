@@ -76,83 +76,92 @@ describe('Clock', () => {
     });
 
     it('has hour and minute marks by default', () => {
-      const component = mount(
+      const component = shallow(
         <Clock />,
       );
 
-      const marks = component.find('.react-clock__mark');
-      const hourMarks = component.find('.react-clock__hour-mark');
-      const minuteMarks = component.find('.react-clock__minute-mark');
+      const hourMarks = component.find('HourMark');
+      const minuteMarks = component.find('MinuteMark');
 
-      expect(marks).toHaveLength(60);
       expect(hourMarks).toHaveLength(12);
       expect(minuteMarks).toHaveLength(60 - 12);
     });
 
     it('does not have hour numbers rendered by default', () => {
-      const component = mount(
+      const component = shallow(
         <Clock />,
       );
 
-      const hourMarkNumbers = component.find('.react-clock__mark__number');
+      const hourMarks = component.find('HourMark');
 
-      expect(hourMarkNumbers).toHaveLength(0);
+      expect(hourMarks.at(0).prop('number')).toBeFalsy();
     });
 
     it('has hour numbers given renderNumbers flag', () => {
-      const component = mount(
+      const component = shallow(
         <Clock renderNumbers />,
       );
 
-      const hourMarks = component.find('.react-clock__hour-mark');
+      const hourMarks = component.find('HourMark');
 
       hourMarks.forEach((hourMark, index) => {
-        const hourMarkNumber = hourMark.find('.react-clock__mark__number');
+        const hourMarkNumber = hourMark.prop('number');
 
-        expect(hourMarkNumber).toHaveLength(1);
-        expect(hourMarkNumber.text()).toBe(`${index + 1}`);
+        expect(hourMarkNumber).toBe(index + 1);
       });
     });
 
+    it('passes formatHour to HourMark components', () => {
+      const formatHour = () => 'H';
+      const component = shallow(
+        <Clock
+          formatHour={formatHour}
+          renderNumbers
+        />,
+      );
+
+      const hourMarks = component.find('HourMark');
+
+      expect(hourMarks.at(0).prop('formatHour')).toBe(formatHour);
+    });
+
     it('has only minute marks when renderHourMarks is false', () => {
-      const component = mount(
+      const component = shallow(
         <Clock renderHourMarks={false} />,
       );
 
-      const marks = component.find('.react-clock__mark');
-      const hourMarks = component.find('.react-clock__hour-mark');
-      const minuteMarks = component.find('.react-clock__minute-mark');
+      const hourMarks = component.find('HourMark');
+      const minuteMarks = component.find('MinuteMark');
 
-      expect(marks).toHaveLength(60);
       expect(hourMarks).toHaveLength(0);
       expect(minuteMarks).toHaveLength(60);
     });
 
     it('has only hour marks when renderMinuteMarks is false', () => {
-      const component = mount(
+      const component = shallow(
         <Clock renderMinuteMarks={false} />,
       );
 
-      const marks = component.find('.react-clock__mark');
-      const hourMarks = component.find('.react-clock__hour-mark');
-      const minuteMarks = component.find('.react-clock__minute-mark');
+      const hourMarks = component.find('HourMark');
+      const minuteMarks = component.find('MinuteMark');
 
-      expect(marks).toHaveLength(12);
       expect(hourMarks).toHaveLength(12);
       expect(minuteMarks).toHaveLength(0);
     });
 
     it('has no marks when renderHourMarks and renderMinuteMarks are false', () => {
-      const component = mount(
+      const component = shallow(
         <Clock
           renderHourMarks={false}
           renderMinuteMarks={false}
         />,
       );
 
-      const marks = component.find('.react-clock__mark');
+      const hourMarks = component.find('HourMark');
+      const minuteMarks = component.find('MinuteMark');
 
-      expect(marks).toHaveLength(0);
+      expect(hourMarks).toHaveLength(0);
+      expect(minuteMarks).toHaveLength(0);
     });
   });
 

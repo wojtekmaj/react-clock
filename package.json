@@ -42,6 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "@wojtekmaj/date-utils": "^1.0.0",
+    "get-user-locale": "^1.4.0",
     "merge-class-names": "^1.1.1",
     "prop-types": "^15.6.0"
   },

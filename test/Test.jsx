@@ -4,12 +4,14 @@ import 'react-clock/src/Clock.less';
 import { useSetInterval } from '@wojtekmaj/react-hooks';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
+import LocaleOptions from './LocaleOptions';
 import ValueOptions from './ValueOptions';
 import ViewOptions from './ViewOptions';
 
 import './Test.less';
 
 export default function Test() {
+  const [locale, setLocale] = useState(null);
   const [renderHourMarks, setRenderHourMarks] = useState(true);
   const [renderMinuteHand, setRenderMinuteHand] = useState(true);
   const [renderMinuteMarks, setRenderMinuteMarks] = useState(true);
@@ -49,6 +51,10 @@ export default function Test() {
       </header>
       <div className="Test__container">
         <aside className="Test__container__options">
+          <LocaleOptions
+            locale={locale}
+            setLocale={setLocale}
+          />
           <ValueOptions
             setValue={setValue}
             value={value}
@@ -78,6 +84,7 @@ export default function Test() {
           >
             <Clock
               className="myCustomClockClassName"
+              locale={locale}
               onChange={setValue}
               renderHourMarks={renderHourMarks}
               renderMinuteHand={renderMinuteHand}
