@@ -5,9 +5,7 @@ import MinuteMark from './MinuteMark';
 
 describe('MinuteMark', () => {
   it('renders Mark', () => {
-    const component = shallow(
-      <MinuteMark name="minute" />,
-    );
+    const component = shallow(<MinuteMark name="minute" />);
 
     expect(component.find('Mark')).toHaveLength(1);
   });

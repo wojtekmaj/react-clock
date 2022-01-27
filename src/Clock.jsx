@@ -97,11 +97,9 @@ export default function Clock({
   }
 
   function renderHourHandFn() {
-    const angle = value ? (
-      (getHours(value) * 30)
-      + (getMinutes(value) / 2)
-      + (getSeconds(value) / 600)
-    ) : 0;
+    const angle = value
+      ? getHours(value) * 30 + getMinutes(value) / 2 + getSeconds(value) / 600
+      : 0;
 
     return (
       <Hand
@@ -119,11 +117,9 @@ export default function Clock({
       return null;
     }
 
-    const angle = value ? (
-      (getHours(value) * 360)
-      + (getMinutes(value) * 6)
-      + (getSeconds(value) / 10)
-    ) : 0;
+    const angle = value
+      ? getHours(value) * 360 + getMinutes(value) * 6 + getSeconds(value) / 10
+      : 0;
 
     return (
       <Hand
@@ -141,10 +137,7 @@ export default function Clock({
       return null;
     }
 
-    const angle = value ? (
-      (getMinutes(value) * 360)
-      + (getSeconds(value) * 6)
-    ) : 0;
+    const angle = value ? getMinutes(value) * 360 + getSeconds(value) * 6 : 0;
 
     return (
       <Hand
@@ -175,10 +168,7 @@ export default function Clock({
 }
 
 Clock.propTypes = {
-  className: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
+  className: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   formatHour: PropTypes.func,
   hourHandLength: isHandLength,
   hourHandOppositeLength: isOppositeHandLength,
@@ -200,8 +190,5 @@ Clock.propTypes = {
   secondHandOppositeLength: isOppositeHandLength,
   secondHandWidth: isHandWidth,
   size: PropTypes.number,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Date),
-  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 };

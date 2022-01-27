@@ -19,10 +19,7 @@ export default function Sample() {
       </header>
       <div className="Sample__container">
         <main className="Sample__container__content">
-          <Clock
-            size={200}
-            value={value}
-          />
+          <Clock size={200} value={value} />
         </main>
       </div>
     </div>

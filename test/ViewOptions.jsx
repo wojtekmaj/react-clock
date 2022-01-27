@@ -45,9 +45,7 @@ export default function ViewOptions({
 
   return (
     <fieldset id="viewoptions">
-      <legend htmlFor="viewoptions">
-        View options
-      </legend>
+      <legend htmlFor="viewoptions">View options</legend>
 
       <div>
         <input
@@ -56,9 +54,7 @@ export default function ViewOptions({
           onChange={onRenderMinuteHandChange}
           type="checkbox"
         />
-        <label htmlFor="renderMinuteHand">
-          Show minute hand
-        </label>
+        <label htmlFor="renderMinuteHand">Show minute hand</label>
       </div>
 
       <div>
@@ -68,9 +64,7 @@ export default function ViewOptions({
           onChange={onRenderSecondHandChange}
           type="checkbox"
         />
-        <label htmlFor="renderSecondHand">
-          Show second hand
-        </label>
+        <label htmlFor="renderSecondHand">Show second hand</label>
       </div>
 
       <div>
@@ -80,9 +74,7 @@ export default function ViewOptions({
           onChange={onRenderHourMarksChange}
           type="checkbox"
         />
-        <label htmlFor="renderHourMarks">
-          Show hour marks
-        </label>
+        <label htmlFor="renderHourMarks">Show hour marks</label>
       </div>
 
       <div>
@@ -92,9 +84,7 @@ export default function ViewOptions({
           onChange={onRenderMinuteMarksChange}
           type="checkbox"
         />
-        <label htmlFor="renderMinuteMarks">
-          Show minute marks
-        </label>
+        <label htmlFor="renderMinuteMarks">Show minute marks</label>
       </div>
 
       <div>
@@ -104,9 +94,7 @@ export default function ViewOptions({
           onChange={onRenderNumbersChange}
           type="checkbox"
         />
-        <label htmlFor="renderNumbers">
-          Show numbers
-        </label>
+        <label htmlFor="renderNumbers">Show numbers</label>
       </div>
     </fieldset>
   );

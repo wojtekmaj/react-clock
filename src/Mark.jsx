@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 
 import { isMarkLength, isMarkWidth } from './shared/propTypes';
 
-export default function Mark({
-  angle = 0,
-  length = 10,
-  name,
-  width = 1,
-  number,
-}) {
+export default function Mark({ angle = 0, length = 10, name, width = 1, number }) {
   return (
     <div
       className={`react-clock__mark react-clock__${name}-mark`}
@@ -22,7 +16,7 @@ export default function Mark({
         style={{
           width: `${width}px`,
           top: 0,
-          bottom: `${100 - (length / 2)}%`,
+          bottom: `${100 - length / 2}%`,
         }}
       />
       {number && (

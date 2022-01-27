@@ -10,6 +10,8 @@ import ViewOptions from './ViewOptions';
 
 import './Test.less';
 
+/* eslint-disable no-console */
+
 export default function Test() {
   const [locale, setLocale] = useState(null);
   const [renderHourMarks, setRenderHourMarks] = useState(true);
@@ -33,32 +35,18 @@ export default function Test() {
       return timeToRender;
     };
 
-    return (
-      <p>
-        Current time:
-        {' '}
-        {value ? renderTime(value) : '(none)'}
-      </p>
-    );
+    return <p>Current time: {value ? renderTime(value) : '(none)'}</p>;
   }
 
   return (
     <div className="Test">
       <header>
-        <h1>
-          react-clock test page
-        </h1>
+        <h1>react-clock test page</h1>
       </header>
       <div className="Test__container">
         <aside className="Test__container__options">
-          <LocaleOptions
-            locale={locale}
-            setLocale={setLocale}
-          />
-          <ValueOptions
-            setValue={setValue}
-            value={value}
-          />
+          <LocaleOptions locale={locale} setLocale={setLocale} />
+          <ValueOptions setValue={setValue} value={value} />
           <ViewOptions
             renderHourMarks={renderHourMarks}
             renderMinuteHand={renderMinuteHand}
@@ -76,10 +64,8 @@ export default function Test() {
           <form
             onSubmit={(event) => {
               event.preventDefault();
-              /* eslint-disable no-console */
               console.error('Clock triggered submitting the form.');
               console.log(event);
-              /* eslint-enable no-console */
             }}
           >
             <Clock

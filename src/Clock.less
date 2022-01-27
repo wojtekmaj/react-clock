@@ -2,7 +2,10 @@
   display: block;
   position: relative;
 
-  &, & *, & *:before, & *:after {
+  &,
+  & *,
+  & *:before,
+  & *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -45,7 +48,7 @@
       background-color: black;
       transform: translateX(-50%);
     }
-    
+
     &__number {
       position: absolute;
       left: -40px;

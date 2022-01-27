@@ -3,13 +3,7 @@ import PropTypes from 'prop-types';
 
 import { isHandLength } from './shared/propTypes';
 
-export default function Hand({
-  angle = 0,
-  name,
-  length = 100,
-  oppositeLength = 10,
-  width = 1,
-}) {
+export default function Hand({ angle = 0, name, length = 100, oppositeLength = 10, width = 1 }) {
   return (
     <div
       className={`react-clock__hand react-clock__${name}-hand`}
@@ -21,8 +15,8 @@ export default function Hand({
         className={`react-clock__hand__body react-clock__${name}-hand__body`}
         style={{
           width: `${width}px`,
-          top: `${50 - (length / 2)}%`,
-          bottom: `${50 - (oppositeLength / 2)}%`,
+          top: `${50 - length / 2}%`,
+          bottom: `${50 - oppositeLength / 2}%`,
         }}
       />
     </div>

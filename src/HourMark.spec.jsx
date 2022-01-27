@@ -5,9 +5,7 @@ import HourMark from './HourMark';
 
 describe('HourMark', () => {
   it('renders Mark', () => {
-    const component = shallow(
-      <HourMark name="hour" />,
-    );
+    const component = shallow(<HourMark name="hour" />);
 
     expect(component.find('Mark')).toHaveLength(1);
   });
@@ -19,12 +17,7 @@ describe('HourMark', () => {
     formatHour.mockReturnValue('H');
 
     const component = shallow(
-      <HourMark
-        name="hour"
-        formatHour={formatHour}
-        locale={locale}
-        number={number}
-      />,
+      <HourMark name="hour" formatHour={formatHour} locale={locale} number={number} />,
     );
 
     const mark = component.find('Mark');

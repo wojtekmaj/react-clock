@@ -5,11 +5,15 @@ const isNumberBetween = (min, max) => (props, propName, componentName) => {
 
   if (isDefined(value)) {
     if (typeof value !== 'number') {
-      return new Error(`Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`number\`.`);
+      return new Error(
+        `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`number\`.`,
+      );
     }
 
     if (value < min || value > max) {
-      return new Error(`Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, length must be between ${min} and ${max}.`);
+      return new Error(
+        `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, length must be between ${min} and ${max}.`,
+      );
     }
   }
 
@@ -26,11 +30,15 @@ export const isHandWidth = (props, propName, componentName) => {
 
   if (isDefined(width)) {
     if (typeof width !== 'number') {
-      return new Error(`Invalid prop \`${propName}\` of type \`${typeof width}\` supplied to \`${componentName}\`, expected \`number\`.`);
+      return new Error(
+        `Invalid prop \`${propName}\` of type \`${typeof width}\` supplied to \`${componentName}\`, expected \`number\`.`,
+      );
     }
 
     if (width < 0) {
-      return new Error(`Invalid prop \`${propName}\` of type \`${typeof width}\` supplied to \`${componentName}\`, width must be greater or equal to 0.`);
+      return new Error(
+        `Invalid prop \`${propName}\` of type \`${typeof width}\` supplied to \`${componentName}\`, width must be greater or equal to 0.`,
+      );
     }
   }
 
