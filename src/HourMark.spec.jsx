@@ -1,13 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import HourMark from './HourMark';
 
 describe('HourMark', () => {
   it('renders Mark', () => {
-    const component = shallow(<HourMark name="hour" />);
+    const { container } = render(<HourMark name="hour" />);
 
-    expect(component.find('Mark')).toHaveLength(1);
+    const mark = container.querySelector('.react-clock__hour-mark');
+
+    expect(mark).toBeInTheDocument();
   });
 
   it('uses formatDay if given', () => {
@@ -16,14 +18,14 @@ describe('HourMark', () => {
     const formatHour = jest.fn();
     formatHour.mockReturnValue('H');
 
-    const component = shallow(
+    const { container } = render(
       <HourMark name="hour" formatHour={formatHour} locale={locale} number={number} />,
     );
 
-    const mark = component.find('Mark');
+    const mark = container.querySelector('.react-clock__hour-mark');
 
     expect(formatHour).toHaveBeenCalled();
     expect(formatHour).toHaveBeenCalledWith(locale, number);
-    expect(mark.prop('number')).toBe('H');
+    expect(mark).toHaveTextContent('H');
   });
 });
