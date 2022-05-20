@@ -1,12 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 
 import MinuteMark from './MinuteMark';
 
 describe('MinuteMark', () => {
   it('renders Mark', () => {
-    const component = shallow(<MinuteMark name="minute" />);
+    const { container } = render(<MinuteMark name="minute" />);
 
-    expect(component.find('Mark')).toHaveLength(1);
+    const mark = container.querySelector('.react-clock__minute-mark');
+
+    expect(mark).toBeInTheDocument();
   });
 });
