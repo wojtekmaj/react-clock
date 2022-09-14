@@ -13,7 +13,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@wojtekmaj/react-hooks": "^1.7.0",
+    "@wojtekmaj/react-hooks": "^1.8.0",
     "prop-types": "^15.6.0",
     "react": "^17.0.0",
     "react-clock": "latest",

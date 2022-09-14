@@ -1876,11 +1876,11 @@ __metadata:
   linkType: hard
 
 "@wojtekmaj/react-hooks@npm:^1.8.0":
-  version: 1.12.0
-  resolution: "@wojtekmaj/react-hooks@npm:1.12.0"
+  version: 1.13.0
+  resolution: "@wojtekmaj/react-hooks@npm:1.13.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0-0
-  checksum: 3713ed75bc1d0dc2ff307ea5deae59600b7cf75786d611870aa14483c9abf4f717b5913ee96786c5f656aa2a53ad7a9ba5b0923916db43e5b5bd29ba3f3aa6d1
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 8a2368cb77b1d9dae7e2cf2ac85013b387ca7a6842f5d7b6d9c2bf26545e65d39f698931dcfab28e5092a62d692c1d5d62981ff59aa915518ef3100ff0cb6cd7
   languageName: node
   linkType: hard
 

@@ -1801,12 +1801,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wojtekmaj/react-hooks@npm:^1.7.0":
-  version: 1.12.0
-  resolution: "@wojtekmaj/react-hooks@npm:1.12.0"
+"@wojtekmaj/react-hooks@npm:^1.8.0":
+  version: 1.13.0
+  resolution: "@wojtekmaj/react-hooks@npm:1.13.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0-0
-  checksum: 3713ed75bc1d0dc2ff307ea5deae59600b7cf75786d611870aa14483c9abf4f717b5913ee96786c5f656aa2a53ad7a9ba5b0923916db43e5b5bd29ba3f3aa6d1
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 8a2368cb77b1d9dae7e2cf2ac85013b387ca7a6842f5d7b6d9c2bf26545e65d39f698931dcfab28e5092a62d692c1d5d62981ff59aa915518ef3100ff0cb6cd7
   languageName: node
   linkType: hard
 
@@ -3233,6 +3233,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"get-user-locale@npm:^1.4.0":
+  version: 1.5.1
+  resolution: "get-user-locale@npm:1.5.1"
+  dependencies:
+    lodash.memoize: ^4.1.1
+  checksum: 4ab9ae83264c8b4f376b7690578ee3b332808d40f49e500469d476b832d4fddcf8477b7a01b60a242fd232b5a2ae8f6b7620f731d67350e89fd17ddd91fc8a0e
+  languageName: node
+  linkType: hard
+
 "glob-parent@npm:^5.1.2, glob-parent@npm:~5.1.2":
   version: 5.1.2
   resolution: "glob-parent@npm:5.1.2"
@@ -3980,6 +3989,13 @@ __metadata:
   version: 4.0.8
   resolution: "lodash.debounce@npm:4.0.8"
   checksum: a3f527d22c548f43ae31c861ada88b2637eb48ac6aa3eb56e82d44917971b8aa96fbb37aa60efea674dc4ee8c42074f90f7b1f772e9db375435f6c83a19b3bc6
+  languageName: node
+  linkType: hard
+
+"lodash.memoize@npm:^4.1.1":
+  version: 4.1.2
+  resolution: "lodash.memoize@npm:4.1.2"
+  checksum: 9ff3942feeccffa4f1fafa88d32f0d24fdc62fd15ded5a74a5f950ff5f0c6f61916157246744c620173dddf38d37095a92327d5fd3861e2063e736a5c207d089
   languageName: node
   linkType: hard
 
@@ -4889,7 +4905,7 @@ __metadata:
     "@babel/core": ^7.15.0
     "@babel/preset-env": ^7.15.0
     "@babel/preset-react": ^7.14.0
-    "@wojtekmaj/react-hooks": ^1.7.0
+    "@wojtekmaj/react-hooks": ^1.8.0
     babel-loader: ^8.0.0
     css-loader: ^6.0.0
     html-webpack-plugin: ^5.1.0
@@ -4907,16 +4923,17 @@ __metadata:
   linkType: soft
 
 "react-clock@npm:latest":
-  version: 3.0.0
-  resolution: "react-clock@npm:3.0.0"
+  version: 3.1.0
+  resolution: "react-clock@npm:3.1.0"
   dependencies:
     "@wojtekmaj/date-utils": ^1.0.0
+    get-user-locale: ^1.4.0
     merge-class-names: ^1.1.1
     prop-types: ^15.6.0
   peerDependencies:
-    react: ">=15.5"
-    react-dom: ">=15.5"
-  checksum: 2f93f15f5fc1e4961db809044612ee430978242b8a7d886b62c9a2e1a368d4b399e807377d9fb388eb01a2d0f333f21415229f7ab949291124c16d5b9ed07ed3
+    react: ^15.5.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^15.5.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 5046a24caacbf8cf6a86c00172533f0914e849d246299a0a2e6335d06b89bc8393734d71413e75c42275d872f160953255f48c7b88cb0f791273f3d10dfb6691
   languageName: node
   linkType: hard
 
