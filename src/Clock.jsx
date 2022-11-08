@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import mergeClassNames from 'merge-class-names';
+import clsx from 'clsx';
 import { getHours, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 
 import Hand from './Hand';
@@ -152,7 +152,7 @@ export default function Clock({
 
   return (
     <time
-      className={mergeClassNames('react-clock', className)}
+      className={clsx('react-clock', className)}
       dateTime={value instanceof Date ? value.toISOString() : value}
       style={{
         width: `${size}px`,
