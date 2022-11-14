@@ -2698,21 +2698,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.0.0":
-  version: 6.7.1
-  resolution: "css-loader@npm:6.7.1"
+"css-loader@npm:^6.7.2":
+  version: 6.7.2
+  resolution: "css-loader@npm:6.7.2"
   dependencies:
     icss-utils: ^5.1.0
-    postcss: ^8.4.7
+    postcss: ^8.4.18
     postcss-modules-extract-imports: ^3.0.0
     postcss-modules-local-by-default: ^4.0.0
     postcss-modules-scope: ^3.0.0
     postcss-modules-values: ^4.0.0
     postcss-value-parser: ^4.2.0
-    semver: ^7.3.5
+    semver: ^7.3.8
   peerDependencies:
     webpack: ^5.0.0
-  checksum: 170fdbc630a05a43679ef60fa97694766b568dbde37adccc0faafa964fc675f08b976bc68837bb73b61d60240e8d2cbcbf51540fe94ebc9dafc56e7c46ba5527
+  checksum: f3c980cc9c033a02e60df7e5a2f33a1e8c2c3dd552f017485d2d81b383be623ae8c4189404e7a4a7403b52744683ae4b516def0f7ccf125c2b198cb647e46543
   languageName: node
   linkType: hard
 
@@ -3516,12 +3516,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"get-user-locale@npm:^1.4.0":
-  version: 1.5.1
-  resolution: "get-user-locale@npm:1.5.1"
+"get-user-locale@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "get-user-locale@npm:2.0.0"
   dependencies:
     lodash.memoize: ^4.1.1
-  checksum: 4ab9ae83264c8b4f376b7690578ee3b332808d40f49e500469d476b832d4fddcf8477b7a01b60a242fd232b5a2ae8f6b7620f731d67350e89fd17ddd91fc8a0e
+  checksum: edb82aa04c4eb4490dbed7e1d9ef689cc570c0a8b4db7d2ad881670c92c6957984115d5fa7f67ad4f3f7b503e5a350857382eed3b98054875eb5e14825c23ea7
   languageName: node
   linkType: hard
 
@@ -5082,14 +5082,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.7":
-  version: 8.4.18
-  resolution: "postcss@npm:8.4.18"
+"postcss@npm:^8.4.18":
+  version: 8.4.19
+  resolution: "postcss@npm:8.4.19"
   dependencies:
     nanoid: ^3.3.4
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
-  checksum: 9349fd99849b2e3d2e134ff949b7770ecb12375f352723ce2bcc06167eba3850ea7844c1b191a85cd915d6a396b4e8ee9a5267e6cc5d8d003d0cbc7a97555d39
+  checksum: 62782723a385f92b7525f66d29614624de7c5643855423db3a5efd9287e677650300192749adddbbb6734cea9b1d5f5fd4f6ea00ca3f9a95dbbb88f835f5ca64
   languageName: node
   linkType: hard
 
@@ -5224,7 +5224,7 @@ __metadata:
     "@wojtekmaj/date-utils": ^1.0.0
     "@wojtekmaj/react-hooks": ^1.8.0
     babel-loader: ^9.0.0
-    css-loader: ^6.0.0
+    css-loader: ^6.7.2
     eslint: ^8.26.0
     html-webpack-plugin: ^5.1.0
     less: ^4.0.0
@@ -5248,7 +5248,7 @@ __metadata:
   dependencies:
     "@wojtekmaj/date-utils": ^1.0.0
     clsx: ^1.2.1
-    get-user-locale: ^1.4.0
+    get-user-locale: ^2.0.0
     prop-types: ^15.6.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -5624,7 +5624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5":
+"semver@npm:^7.3.5, semver@npm:^7.3.8":
   version: 7.3.8
   resolution: "semver@npm:7.3.8"
   dependencies:
