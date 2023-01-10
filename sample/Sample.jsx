@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSetInterval } from '@wojtekmaj/react-hooks';
 import Clock from 'react-clock';
 
-import './Sample.less';
+import './Sample.css';
 
 export default function Sample() {
   const [value, onChange] = useState(new Date());
