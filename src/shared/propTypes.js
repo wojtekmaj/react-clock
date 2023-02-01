@@ -1,31 +1,33 @@
 import { isDefined } from './utils';
 
-const isNumberBetween = (min, max) => (props, propName, componentName) => {
-  const { [propName]: value } = props;
+function isNumberBetween(min, max) {
+  return (props, propName, componentName) => {
+    const { [propName]: value } = props;
 
-  if (isDefined(value)) {
-    if (typeof value !== 'number') {
-      return new Error(
-        `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`number\`.`,
-      );
+    if (isDefined(value)) {
+      if (typeof value !== 'number') {
+        return new Error(
+          `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`number\`.`,
+        );
+      }
+
+      if (value < min || value > max) {
+        return new Error(
+          `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, length must be between ${min} and ${max}.`,
+        );
+      }
     }
 
-    if (value < min || value > max) {
-      return new Error(
-        `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, length must be between ${min} and ${max}.`,
-      );
-    }
-  }
-
-  // Everything is fine
-  return null;
-};
+    // Everything is fine
+    return null;
+  };
+}
 
 export const isHandLength = isNumberBetween(0, 100);
 
 export const isOppositeHandLength = isNumberBetween(-100, 100);
 
-export const isHandWidth = (props, propName, componentName) => {
+export function isHandWidth(props, propName, componentName) {
   const { [propName]: width } = props;
 
   if (isDefined(width)) {
@@ -44,7 +46,7 @@ export const isHandWidth = (props, propName, componentName) => {
 
   // Everything is fine
   return null;
-};
+}
 
 export const isMarkLength = isHandLength;
 
