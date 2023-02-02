@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 fs.copyFile('src/Clock.css', 'dist/Clock.css', (error) => {
   if (error) {
