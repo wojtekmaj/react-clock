@@ -87,7 +87,7 @@ Displays a complete clock.
 | secondHandLength         | Second hand length, in %.                                                                                                 | `90`                    | `80`                                                                                                |
 | secondHandOppositeLength | The length of the part of a second hand on the opposite side the hand is pointing to, in %.                               | `10`                    | `20`                                                                                                |
 | secondHandWidth          | Second hand width, in pixels.                                                                                             | `1`                     | `2`                                                                                                 |
-| size                     | Clock size, in pixels.                                                                                                    | `150`                   | `250`                                                                                               |
+| size                     | Clock size, in pixels (e.g. `200`) or as string (e.g. `"50vw"`).                                                          | `150`                   | <ul><li>Number: `250`</li><li>String: `"50vw"`</li></ul>                                            |
 | value                    | Clock value. Must be provided.                                                                                            | n/a                     | Date: `new Date()`                                                                                  |
 
 ## License

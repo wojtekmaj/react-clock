@@ -155,8 +155,8 @@ export default function Clock({
       className={clsx('react-clock', className)}
       dateTime={value instanceof Date ? value.toISOString() : value}
       style={{
-        width: `${size}px`,
-        height: `${size}px`,
+        width: size,
+        height: size,
       }}
     >
       {renderFace()}
@@ -189,6 +189,6 @@ Clock.propTypes = {
   secondHandLength: isHandLength,
   secondHandOppositeLength: isOppositeHandLength,
   secondHandWidth: isHandWidth,
-  size: PropTypes.number,
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 };
