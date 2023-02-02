@@ -86,7 +86,7 @@ describe('Clock', () => {
       const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
 
       hourMarks.forEach((hourMark, index) => {
-        expect(hourMark).toHaveTextContent(index + 1);
+        expect(hourMark).toHaveTextContent(`${index + 1}`);
       });
     });
 
@@ -137,8 +137,25 @@ describe('Clock', () => {
   const minuteSecondAngle = minuteAngle / 60;
   const secondAngle = fullCircle / 60;
 
-  const getDeg = (transform) => parseFloat(transform.match(/rotate\(([0-9.]*)deg\)/)[1]);
-  const getAngle = (hand) => getDeg(window.getComputedStyle(hand).transform) % 360;
+  function getDeg(transform: string) {
+    const match = transform.match(/rotate\(([0-9.]*)deg\)/);
+
+    if (!match) {
+      throw new Error('Could not parse transform');
+    }
+
+    const deg = match[1];
+
+    if (!deg) {
+      throw new Error('Could not parse transform');
+    }
+
+    return parseFloat(deg);
+  }
+
+  function getAngle(hand: HTMLElement) {
+    return getDeg(window.getComputedStyle(hand).transform) % 360;
+  }
 
   describe('hour hand', () => {
     it('is rendered properly', () => {
@@ -156,7 +173,7 @@ describe('Clock', () => {
 
       const { container } = render(<Clock value={date} />);
 
-      const hand = container.querySelector('.react-clock__hour-hand');
+      const hand = container.querySelector('.react-clock__hour-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(hour * hourAngle + minute * hourMinuteAngle);
     });
@@ -187,7 +204,7 @@ describe('Clock', () => {
 
       const { container } = render(<Clock value={date} />);
 
-      const hand = container.querySelector('.react-clock__minute-hand');
+      const hand = container.querySelector('.react-clock__minute-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(minute * minuteAngle + second * minuteSecondAngle);
     });
@@ -218,7 +235,7 @@ describe('Clock', () => {
 
       const { container } = render(<Clock value={date} />);
 
-      const hand = container.querySelector('.react-clock__second-hand');
+      const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(second * secondAngle);
     });

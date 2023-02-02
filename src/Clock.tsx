@@ -7,6 +7,8 @@ import Hand from './Hand';
 import MinuteMark from './MinuteMark';
 import HourMark from './HourMark';
 
+import type { formatHour as defaultFormatHour } from './shared/hourFormatter';
+
 import {
   isHandLength,
   isOppositeHandLength,
@@ -14,6 +16,40 @@ import {
   isMarkLength,
   isMarkWidth,
 } from './shared/propTypes';
+
+import type {
+  HandLength,
+  HandWidth,
+  MarkLength,
+  MarkWidth,
+  OppositeHandLength,
+} from './shared/types';
+
+type ClockProps = {
+  className?: string;
+  formatHour?: typeof defaultFormatHour;
+  hourHandLength?: HandLength;
+  hourHandOppositeLength?: OppositeHandLength;
+  hourHandWidth?: HandWidth;
+  hourMarksLength?: MarkLength;
+  hourMarksWidth?: MarkWidth;
+  locale?: string;
+  minuteHandLength?: HandLength;
+  minuteHandOppositeLength?: OppositeHandLength;
+  minuteHandWidth?: HandWidth;
+  minuteMarksLength?: MarkLength;
+  minuteMarksWidth?: MarkWidth;
+  renderHourMarks?: boolean;
+  renderMinuteHand?: boolean;
+  renderMinuteMarks?: boolean;
+  renderNumbers?: boolean;
+  renderSecondHand?: boolean;
+  secondHandLength?: HandLength;
+  secondHandOppositeLength?: OppositeHandLength;
+  secondHandWidth?: HandWidth;
+  size?: React.CSSProperties['width'];
+  value?: string | Date;
+};
 
 export default function Clock({
   className,
@@ -39,7 +75,7 @@ export default function Clock({
   secondHandWidth = 1,
   size = 150,
   value,
-}) {
+}: ClockProps) {
   function renderMinuteMarksFn() {
     if (!renderMinuteMarks) {
       return null;
@@ -79,7 +115,7 @@ export default function Clock({
           length={hourMarksLength}
           locale={locale}
           name="hour"
-          number={renderNumbers ? i : null}
+          number={renderNumbers ? i : undefined}
           width={hourMarksWidth}
         />,
       );

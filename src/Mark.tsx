@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 
 import { isMarkLength, isMarkWidth } from './shared/propTypes';
 
-export default function Mark({ angle = 0, length = 10, name, width = 1, number }) {
+import type { MarkLength, MarkWidth } from './shared/types';
+
+type MarkProps = {
+  angle?: number;
+  length?: MarkLength;
+  name: string;
+  number?: React.ReactNode;
+  width?: MarkWidth;
+};
+
+export default function Mark({ angle = 0, length = 10, name, width = 1, number }: MarkProps) {
   return (
     <div
       className={`react-clock__mark react-clock__${name}-mark`}
@@ -38,6 +48,6 @@ Mark.propTypes = {
   angle: PropTypes.number,
   length: isMarkLength,
   name: PropTypes.string.isRequired,
-  number: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  number: PropTypes.node,
   width: isMarkWidth,
 };
