@@ -1,10 +1,8 @@
-import { isDefined } from './utils';
-
 function isNumberBetween(min, max) {
   return (props, propName, componentName) => {
     const { [propName]: value } = props;
 
-    if (isDefined(value)) {
+    if (typeof value !== 'undefined') {
       if (typeof value !== 'number') {
         return new Error(
           `Invalid prop \`${propName}\` of type \`${typeof value}\` supplied to \`${componentName}\`, expected \`number\`.`,
@@ -30,7 +28,7 @@ export const isOppositeHandLength = isNumberBetween(-100, 100);
 export function isHandWidth(props, propName, componentName) {
   const { [propName]: width } = props;
 
-  if (isDefined(width)) {
+  if (typeof width !== 'undefined') {
     if (typeof width !== 'number') {
       return new Error(
         `Invalid prop \`${propName}\` of type \`${typeof width}\` supplied to \`${componentName}\`, expected \`number\`.`,
