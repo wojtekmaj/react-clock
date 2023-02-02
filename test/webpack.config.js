@@ -24,12 +24,12 @@ module.exports = {
       'react-dom/client': require.resolve('react-dom/client'),
       'react-dom': require.resolve('react-dom'),
     },
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules(?!\/react-clock)/,
         use: [
           {
