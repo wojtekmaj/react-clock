@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSetInterval } from '@wojtekmaj/react-hooks';
 import Clock from 'react-clock';
+import 'react-clock/dist/Clock.css';
 
 import './Sample.css';
 
