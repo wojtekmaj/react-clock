@@ -71,7 +71,6 @@ export default function Test() {
             <Clock
               className="myCustomClockClassName"
               locale={locale}
-              onChange={setValue}
               renderHourMarks={renderHourMarks}
               renderMinuteHand={renderMinuteHand}
               renderMinuteMarks={renderMinuteMarks}
