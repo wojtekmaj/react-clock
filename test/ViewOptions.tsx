@@ -12,32 +12,43 @@ export default function ViewOptions({
   setRenderMinuteMarks,
   setRenderNumbers,
   setRenderSecondHand,
+}: {
+  renderHourMarks: boolean;
+  renderMinuteHand: boolean;
+  renderMinuteMarks: boolean;
+  renderNumbers: boolean;
+  renderSecondHand: boolean;
+  setRenderHourMarks: (renderHourMarks: boolean) => void;
+  setRenderMinuteHand: (renderMinuteHand: boolean) => void;
+  setRenderMinuteMarks: (renderMinuteMarks: boolean) => void;
+  setRenderNumbers: (renderNumbers: boolean) => void;
+  setRenderSecondHand: (renderSecondHand: boolean) => void;
 }) {
-  function onRenderMinuteHandChange(event) {
+  function onRenderMinuteHandChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setRenderMinuteHand(checked);
   }
 
-  function onRenderSecondHandChange(event) {
+  function onRenderSecondHandChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setRenderSecondHand(checked);
   }
 
-  function onRenderHourMarksChange(event) {
+  function onRenderHourMarksChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setRenderHourMarks(checked);
   }
 
-  function onRenderMinuteMarksChange(event) {
+  function onRenderMinuteMarksChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setRenderMinuteMarks(checked);
   }
 
-  function onRenderNumbersChange(event) {
+  function onRenderNumbersChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setRenderNumbers(checked);

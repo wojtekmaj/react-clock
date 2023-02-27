@@ -13,13 +13,13 @@ import './Test.css';
 /* eslint-disable no-console */
 
 export default function Test() {
-  const [locale, setLocale] = useState(null);
+  const [locale, setLocale] = useState<string>();
   const [renderHourMarks, setRenderHourMarks] = useState(true);
   const [renderMinuteHand, setRenderMinuteHand] = useState(true);
   const [renderMinuteMarks, setRenderMinuteMarks] = useState(true);
   const [renderNumbers, setRenderNumbers] = useState(true);
   const [renderSecondHand, setRenderSecondHand] = useState(true);
-  const [value, setValue] = useState(new Date());
+  const [value, setValue] = useState<string | Date | undefined>(new Date());
 
   const updateDate = useCallback(() => {
     setValue(new Date());
@@ -28,12 +28,12 @@ export default function Test() {
   useSetInterval(updateDate, 1000);
 
   function renderDebugInfo() {
-    const renderTime = (timeToRender) => {
+    function renderTime(timeToRender: string | Date): string {
       if (timeToRender instanceof Date) {
         return getHoursMinutesSeconds(timeToRender);
       }
       return timeToRender;
-    };
+    }
 
     return <p>Current time: {value ? renderTime(value) : '(none)'}</p>;
   }

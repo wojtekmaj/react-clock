@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 
 import Test from './Test';
 
-createRoot(document.getElementById('react-root')).render(
+createRoot(document.getElementById('react-root') as HTMLElement).render(
   <StrictMode>
     <Test />
   </StrictMode>,

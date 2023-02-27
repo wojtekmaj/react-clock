@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
-export default function ValueOptions({ setValue, value }) {
-  function onChange(event) {
+export default function ValueOptions({
+  setValue,
+  value,
+}: {
+  setValue: (value: string | Date | undefined) => void;
+  value?: string | Date;
+}) {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value: nextValue } = event.target;
 
     setValue(nextValue);
@@ -22,7 +28,7 @@ export default function ValueOptions({ setValue, value }) {
           value={value ? getHoursMinutesSeconds(value) : ''}
         />
         &nbsp;
-        <button onClick={() => setValue(null)} type="button">
+        <button onClick={() => setValue(undefined)} type="button">
           Clear
         </button>
       </div>

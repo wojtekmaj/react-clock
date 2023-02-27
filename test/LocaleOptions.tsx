@@ -1,27 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function LocaleOptions({ locale, setLocale }) {
-  function onChange(event) {
-    let { value: nextLocale } = event.target;
+export default function LocaleOptions({
+  locale,
+  setLocale,
+}: {
+  locale?: string;
+  setLocale: (locale: string | undefined) => void;
+}) {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { value: nextLocale } = event.target;
 
-    if (nextLocale === 'null') {
-      nextLocale = null;
-    }
-
-    setLocale(nextLocale);
+    setLocale(nextLocale === 'null' ? undefined : nextLocale);
   }
 
-  function onCustomChange(event) {
+  function onCustomChange(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const { value: nextLocale } = event.target.customLocale;
+    const formData = new FormData(event.target as HTMLFormElement);
+
+    const nextLocale = formData.get('customLocale') as string;
 
     setLocale(nextLocale);
   }
 
   function resetLocale() {
-    setLocale(null);
+    setLocale(undefined);
   }
 
   return (
@@ -30,7 +34,7 @@ export default function LocaleOptions({ locale, setLocale }) {
 
       <div>
         <input
-          checked={locale === null}
+          checked={locale === undefined}
           id="localeDefault"
           name="locale"
           onChange={onChange}
