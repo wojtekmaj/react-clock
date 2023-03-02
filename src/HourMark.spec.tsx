@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 
@@ -15,7 +16,7 @@ describe('HourMark', () => {
   it('uses formatDay if given', () => {
     const locale = 'en-US';
     const number = 5;
-    const formatHour = jest.fn();
+    const formatHour = vi.fn();
     formatHour.mockReturnValue('H');
 
     const { container } = render(
