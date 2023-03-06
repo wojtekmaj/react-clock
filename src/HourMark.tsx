@@ -17,7 +17,7 @@ export default function HourMark({
   number,
   ...otherProps
 }: HourMarkProps) {
-  return <Mark number={number && formatHour(locale, number)} {...otherProps} />;
+  return <Mark number={number ? formatHour(locale, number) : null} {...otherProps} />;
 }
 
 HourMark.propTypes = {

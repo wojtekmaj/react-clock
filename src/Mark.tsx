@@ -29,7 +29,7 @@ export default function Mark({ angle = 0, length = 10, name, width = 1, number }
           bottom: `${100 - length / 2}%`,
         }}
       />
-      {number && (
+      {number ? (
         <div
           className="react-clock__mark__number"
           style={{
@@ -39,7 +39,7 @@ export default function Mark({ angle = 0, length = 10, name, width = 1, number }
         >
           {number}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
