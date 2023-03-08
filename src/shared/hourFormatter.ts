@@ -1,4 +1,5 @@
 import getUserLocale from 'get-user-locale';
 
-export const formatHour = (locale: string | undefined, hour: number) =>
-  hour.toLocaleString(locale || getUserLocale() || undefined);
+export function formatHour(locale: string | undefined, hour: number) {
+  return hour.toLocaleString(locale || getUserLocale() || undefined);
+}
