@@ -9,6 +9,13 @@
   "sideEffects": [
     "*.css"
   ],
+  "type": "module",
+  "exports": {
+    ".": "./dist/esm/index.js",
+    "./src": "./src/index.ts",
+    "./src/*": "./src/*",
+    "./dist/Clock.css": "./dist/Clock.css"
+  },
   "scripts": {
     "build": "yarn build-js && yarn copy-styles",
     "build-js": "yarn build-js-esm && yarn build-js-cjs",
