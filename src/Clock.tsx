@@ -49,7 +49,7 @@ type ClockProps = {
   secondHandOppositeLength?: OppositeHandLength;
   secondHandWidth?: HandWidth;
   size?: React.CSSProperties['width'];
-  value?: string | Date;
+  value?: string | Date | null;
 };
 
 export default function Clock({
@@ -190,7 +190,7 @@ export default function Clock({
   return (
     <time
       className={clsx('react-clock', className)}
-      dateTime={value instanceof Date ? value.toISOString() : value}
+      dateTime={value instanceof Date ? value.toISOString() : value || undefined}
       style={{
         width: size,
         height: size,
