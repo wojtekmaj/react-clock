@@ -4,6 +4,8 @@ type Enumerate<N extends number, Acc extends number[] = []> = Acc['length'] exte
 
 type Range<F extends number, T extends number> = Exclude<Enumerate<T>, Enumerate<F>> | T;
 
+export type ClassName = string | null | undefined | (string | null | undefined)[];
+
 export type GreaterThanOrEqualTo<F extends number> = Range<F, 999>;
 
 export type HandLength = Range<0, 100>;

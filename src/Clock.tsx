@@ -18,6 +18,7 @@ import {
 } from './shared/propTypes';
 
 import type {
+  ClassName,
   HandLength,
   HandWidth,
   MarkLength,
@@ -26,7 +27,7 @@ import type {
 } from './shared/types';
 
 type ClockProps = {
-  className?: string;
+  className?: ClassName;
   formatHour?: typeof defaultFormatHour;
   hourHandLength?: HandLength;
   hourHandOppositeLength?: OppositeHandLength;
