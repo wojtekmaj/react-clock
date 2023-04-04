@@ -2,8 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
-export default function ValueOptions({ setValue, value }) {
-  function onChange(event) {
+import type { LooseValue } from './shared/types';
+
+type ValueOptionsProps = {
+  setValue: (value: LooseValue) => void;
+  value?: LooseValue;
+};
+
+export default function ValueOptions({ setValue, value }: ValueOptionsProps) {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value: nextValue } = event.target;
 
     setValue(nextValue);

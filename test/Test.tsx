@@ -10,16 +10,20 @@ import ViewOptions from './ViewOptions';
 
 import './Test.css';
 
+import type { LooseValue } from './shared/types';
+
 /* eslint-disable no-console */
 
+const now = new Date();
+
 export default function Test() {
-  const [locale, setLocale] = useState(null);
+  const [locale, setLocale] = useState<string>();
   const [renderHourMarks, setRenderHourMarks] = useState(true);
   const [renderMinuteHand, setRenderMinuteHand] = useState(true);
   const [renderMinuteMarks, setRenderMinuteMarks] = useState(true);
   const [renderNumbers, setRenderNumbers] = useState(true);
   const [renderSecondHand, setRenderSecondHand] = useState(true);
-  const [value, setValue] = useState(new Date());
+  const [value, setValue] = useState<LooseValue>(now);
 
   const updateDate = useCallback(() => {
     setValue(new Date());
@@ -28,7 +32,7 @@ export default function Test() {
   useSetInterval(updateDate, 1000);
 
   function renderDebugInfo() {
-    const renderTime = (timeToRender) => {
+    const renderTime = (timeToRender: string | Date | null) => {
       if (timeToRender instanceof Date) {
         return getHoursMinutesSeconds(timeToRender);
       }
