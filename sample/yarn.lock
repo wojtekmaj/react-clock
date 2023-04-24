@@ -615,14 +615,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wojtekmaj/react-hooks@npm:^1.16.2":
-  version: 1.16.2
-  resolution: "@wojtekmaj/react-hooks@npm:1.16.2"
+"@wojtekmaj/react-hooks@npm:^1.17.2":
+  version: 1.17.2
+  resolution: "@wojtekmaj/react-hooks@npm:1.17.2"
   dependencies:
     "@types/react": "*"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 1bba0de69e012c2c9ce5c56f01cc994a69b440e14646e93751b713c8fe2c237a627355b71dd3f8de4a745eef4c1dfcd47f89901485aa7f46856e0097941c0fb1
+  checksum: 07b191b4ffc86e1be45f88849c0314db2521bbc7d9c7e0d981b8be902be8baf124f1db8436675e23da18952f88863c87a3929f78c72e7accc539f57fbbc7c543
   languageName: node
   linkType: hard
 
@@ -1644,7 +1644,7 @@ __metadata:
   dependencies:
     "@types/babel__core": ^7.20.0
     "@vitejs/plugin-react": ^3.0.0
-    "@wojtekmaj/react-hooks": ^1.16.2
+    "@wojtekmaj/react-hooks": ^1.17.2
     prop-types: ^15.6.0
     react: ^18.2.0
     react-clock: latest
