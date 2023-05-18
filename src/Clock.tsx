@@ -26,7 +26,7 @@ import type {
   OppositeHandLength,
 } from './shared/types';
 
-type ClockProps = {
+export type ClockProps = {
   className?: ClassName;
   formatHour?: typeof defaultFormatHour;
   hourHandLength?: HandLength;
