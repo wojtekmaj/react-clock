@@ -1,5 +1,7 @@
-function isNumberBetween(min: number, max: number) {
-  return (props: Record<string, unknown>, propName: string, componentName: string) => {
+import type { Validator } from 'prop-types';
+
+function isNumberBetween(min: number, max: number): Validator<number> {
+  return (props, propName, componentName) => {
     const { [propName]: value } = props;
 
     if (typeof value !== 'undefined') {
@@ -25,11 +27,7 @@ export const isHandLength = isNumberBetween(0, 100);
 
 export const isOppositeHandLength = isNumberBetween(-100, 100);
 
-export function isHandWidth(
-  props: Record<string, unknown>,
-  propName: string,
-  componentName: string,
-) {
+export const isHandWidth: Validator<number> = function isHandWidth(props, propName, componentName) {
   const { [propName]: width } = props;
 
   if (typeof width !== 'undefined') {
@@ -48,7 +46,7 @@ export function isHandWidth(
 
   // Everything is fine
   return null;
-}
+};
 
 export const isMarkLength = isHandLength;
 
