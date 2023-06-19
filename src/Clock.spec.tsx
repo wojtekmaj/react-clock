@@ -137,6 +137,7 @@ describe('Clock', () => {
   const minuteAngle = fullCircle / 60;
   const minuteSecondAngle = minuteAngle / 60;
   const secondAngle = fullCircle / 60;
+  const millisecondAngle = secondAngle / 1000;
 
   function getDeg(transform: string) {
     const match = transform.match(/rotate\(([0-9.]*)deg\)/);
@@ -228,7 +229,7 @@ describe('Clock', () => {
       expect(hand).not.toBeInTheDocument();
     });
 
-    it('is properly angled', () => {
+    it('is properly angled when milliseconds are off', () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
@@ -238,7 +239,21 @@ describe('Clock', () => {
 
       const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
 
-      expect(getAngle(hand)).toBeCloseTo(second * secondAngle);
+      expect(getAngle(hand)).toBeCloseTo(second * secondAngle, 0); // Close to the integer value
+    });
+
+    it('is properly angled, with increased precision, when milliseconds are on', () => {
+      const hour = 9;
+      const minute = 20;
+      const second = 47;
+      const millisecond = 123;
+      const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
+
+      const { container } = render(<Clock value={date} useMilliseconds={true} />);
+
+      const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
+
+      expect(getAngle(hand)).toBeCloseTo(second * secondAngle + millisecond * millisecondAngle, 4); // Close to 4 decimal places
     });
   });
 });
