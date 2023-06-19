@@ -48,6 +48,7 @@ export type ClockProps = {
   secondHandLength?: HandLength;
   secondHandOppositeLength?: OppositeHandLength;
   secondHandWidth?: HandWidth;
+  useMilliseconds?: boolean;
   size?: React.CSSProperties['width'];
   value?: string | Date | null;
 };
@@ -74,6 +75,7 @@ export default function Clock({
   secondHandLength = 90,
   secondHandOppositeLength,
   secondHandWidth = 1,
+  useMilliseconds = false,
   size = 150,
   value,
 }: ClockProps) {
@@ -135,7 +137,7 @@ export default function Clock({
 
   function renderHourHandFn() {
     const angle = value
-      ? getHours(value) * 30 + getMinutes(value) / 2 + getSeconds(value) / 600
+      ? getHours(value) * 30 + getMinutes(value) / 2 + getSeconds(value, useMilliseconds) / 600
       : 0;
 
     return (
@@ -155,7 +157,7 @@ export default function Clock({
     }
 
     const angle = value
-      ? getHours(value) * 360 + getMinutes(value) * 6 + getSeconds(value) / 10
+      ? getHours(value) * 360 + getMinutes(value) * 6 + getSeconds(value, useMilliseconds) / 10
       : 0;
 
     return (
@@ -174,7 +176,7 @@ export default function Clock({
       return null;
     }
 
-    const angle = value ? getMinutes(value) * 360 + getSeconds(value) * 6 : 0;
+    const angle = value ? getMinutes(value) * 360 + getSeconds(value, useMilliseconds) * 6 : 0;
 
     return (
       <Hand
