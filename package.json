@@ -1,6 +1,6 @@
 {
   "name": "@arcataroger/react-clock-milliseconds",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "description": "An analog clock for your React app.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -44,7 +44,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/react": "*",
-    "@wojtekmaj/date-utils": "^1.5.0",
+    "@arcataroger/date-utils-milliseconds": "^1.5.1",
     "clsx": "^1.2.1",
     "get-user-locale": "^2.2.1",
     "prop-types": "^15.6.0"

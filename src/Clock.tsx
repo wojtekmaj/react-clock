@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { getHours, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
+import { getHours, getMinutes, getSeconds } from '@arcataroger/date-utils-milliseconds';
 
 import Hand from './Hand';
 import MinuteMark from './MinuteMark';

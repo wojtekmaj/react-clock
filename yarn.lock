@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.2.0.tgz#e1a84fca468f4b337816fcb7f0964beb620ba855"
   integrity sha512-E09FiIft46CmH5Qnjb0wsW54/YQd69LsxeKUOWawmws1XWvyFGURnAChH0mlr7YPFR1ofwvUQfcL0J3lMxXqPA==
 
+"@arcataroger/date-utils-milliseconds@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@arcataroger/date-utils-milliseconds/-/date-utils-milliseconds-1.5.1.tgz#9772abecc357d111c905bcac284ed91253776cb7"
+  integrity sha512-WkifyNoOYwbZzo7vKdqkEUjVSGUq2azgETzKVyAPEgSoP7kTJ/KViajlRU5ThMoDyU7KQPPOEePDie4QeJn0qA==
+
 "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.12.13":
   version "7.22.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.22.5.tgz#234d98e1551960604f1246e6475891a570ad5658"
@@ -606,11 +611,6 @@
     concordance "^5.0.4"
     loupe "^2.3.6"
     pretty-format "^27.5.1"
-
-"@wojtekmaj/date-utils@^1.1.2":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@wojtekmaj/date-utils/-/date-utils-1.4.1.tgz#d6be1a002173d3a43590b941008ea27b432672ae"
-  integrity sha512-Fjs0KJz0//0AmlJVFx9AQmWpmxOTw4foDo4DKoswWVVjHsna4rdu+fXwid5YHNgzv/wHi9AkZCRPmHWsf890lg==
 
 abab@^2.0.6:
   version "2.0.6"
