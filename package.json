@@ -1,6 +1,6 @@
 {
   "name": "@arcataroger/react-clock-milliseconds",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "description": "An analog clock for your React app.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,6 @@
     "clean": "rimraf dist",
     "copy-styles": "node --loader ts-node/esm ./copy-styles.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "husky install",
     "prepack": "yarn clean && yarn build",
     "prettier": "prettier --check . --cache",
     "test": "yarn lint && yarn tsc && yarn prettier && yarn unit",
