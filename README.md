@@ -4,6 +4,8 @@
 
 An analog clock for your React app.
 
+Forked from [@wojtekmaj/react-clock](https://github.com/wojtekmaj/react-clock) to add milliseconds support until [the relevant upstream PR](https://github.com/wojtekmaj/react-clock/pull/204) is accepted.
+
 ## tl;dr
 
 - Install by executing `npm install react-clock` or `yarn add react-clock`.
