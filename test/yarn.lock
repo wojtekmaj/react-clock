@@ -1584,14 +1584,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "react-clock@portal:../::locator=react-clock-test-page%40workspace%3A."
   dependencies:
-    "@types/react": "*"
     "@wojtekmaj/date-utils": ^1.1.2
     clsx: ^2.0.0
     get-user-locale: ^2.2.1
     prop-types: ^15.6.0
   peerDependencies:
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
   languageName: node
   linkType: soft
 
