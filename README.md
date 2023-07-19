@@ -24,8 +24,8 @@ Add React-Clock to your project by executing `npm install react-clock` or `yarn 
 
 Here's an example of basic usage:
 
-```js
-import React, { useEffect, useState } from 'react';
+```tsx
+import { useEffect, useState } from 'react';
 import Clock from 'react-clock';
 
 function MyApp() {
@@ -52,7 +52,7 @@ function MyApp() {
 
 If you want to use default React-Clock styling to build upon it, you can import React-Clock's styles by using:
 
-```js
+```ts
 import 'react-clock/dist/Clock.css';
 ```
 
