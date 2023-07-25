@@ -52,7 +52,7 @@ export type ClockProps = {
   value?: string | Date | null;
 };
 
-export default function Clock({
+const Clock: React.FC<ClockProps> = function Clock({
   className,
   formatHour,
   hourHandLength = 50,
@@ -76,7 +76,7 @@ export default function Clock({
   secondHandWidth = 1,
   size = 150,
   value,
-}: ClockProps) {
+}) {
   function renderMinuteMarksFn() {
     if (!renderMinuteMarks) {
       return null;
@@ -202,7 +202,7 @@ export default function Clock({
       {renderSecondHandFn()}
     </time>
   );
-}
+};
 
 Clock.propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
@@ -229,3 +229,5 @@ Clock.propTypes = {
   size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 };
+
+export default Clock;
