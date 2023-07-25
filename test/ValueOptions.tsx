@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
 import type { LooseValue } from './shared/types';
@@ -36,8 +35,3 @@ export default function ValueOptions({ setValue, value }: ValueOptionsProps) {
     </fieldset>
   );
 }
-
-ValueOptions.propTypes = {
-  setValue: PropTypes.func.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
-};

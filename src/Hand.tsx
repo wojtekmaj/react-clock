@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import { isHandLength, isHandWidth } from './shared/propTypes';
 
 import type { HandLength, HandWidth, OppositeHandLength } from './shared/types';
 
@@ -38,11 +35,3 @@ export default function Hand({
     </div>
   );
 }
-
-Hand.propTypes = {
-  angle: PropTypes.number,
-  length: isHandLength,
-  name: PropTypes.string.isRequired,
-  oppositeLength: isHandLength,
-  width: isHandWidth,
-};

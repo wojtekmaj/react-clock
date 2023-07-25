@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Mark from './Mark';
 
@@ -19,9 +18,3 @@ export default function HourMark({
 }: HourMarkProps) {
   return <Mark number={number ? formatHour(locale, number) : null} {...otherProps} />;
 }
-
-HourMark.propTypes = {
-  formatHour: PropTypes.func,
-  locale: PropTypes.string,
-  number: PropTypes.number,
-};

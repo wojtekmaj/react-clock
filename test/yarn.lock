@@ -1572,7 +1572,6 @@ __metadata:
     "@vitejs/plugin-react": ^3.0.0
     "@wojtekmaj/date-utils": ^1.1.2
     "@wojtekmaj/react-hooks": ^1.16.2
-    prop-types: ^15.6.0
     react: ^18.2.0
     react-clock: "portal:../"
     react-dom: ^18.2.0

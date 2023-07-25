@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-import { isMarkLength, isMarkWidth } from './shared/propTypes';
 
 import type { MarkLength, MarkWidth } from './shared/types';
 
@@ -43,11 +40,3 @@ export default function Mark({ angle = 0, length = 10, name, width = 1, number }
     </div>
   );
 }
-
-Mark.propTypes = {
-  angle: PropTypes.number,
-  length: isMarkLength,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.node,
-  width: isMarkWidth,
-};

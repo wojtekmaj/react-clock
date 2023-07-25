@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 type ViewOptionsProps = {
   renderHourMarks: boolean;
@@ -112,16 +111,3 @@ export default function ViewOptions({
     </fieldset>
   );
 }
-
-ViewOptions.propTypes = {
-  renderHourMarks: PropTypes.bool.isRequired,
-  renderMinuteHand: PropTypes.bool.isRequired,
-  renderMinuteMarks: PropTypes.bool.isRequired,
-  renderNumbers: PropTypes.bool.isRequired,
-  renderSecondHand: PropTypes.bool.isRequired,
-  setRenderHourMarks: PropTypes.func.isRequired,
-  setRenderMinuteHand: PropTypes.func.isRequired,
-  setRenderMinuteMarks: PropTypes.func.isRequired,
-  setRenderNumbers: PropTypes.func.isRequired,
-  setRenderSecondHand: PropTypes.func.isRequired,
-};
