@@ -134,6 +134,7 @@ describe('Clock', () => {
   const fullCircle = 360;
   const hourAngle = fullCircle / 12;
   const hourMinuteAngle = hourAngle / 60;
+  const hourSecondAngle = hourMinuteAngle / 60;
   const minuteAngle = fullCircle / 60;
   const minuteSecondAngle = minuteAngle / 60;
   const secondAngle = fullCircle / 60;
@@ -170,13 +171,16 @@ describe('Clock', () => {
     it('is properly angled', () => {
       const hour = 9;
       const minute = 20;
-      const date = new Date(2017, 0, 1, hour, minute);
+      const second = 47;
+      const date = new Date(2017, 0, 1, hour, minute, second);
 
       const { container } = render(<Clock value={date} />);
 
       const hand = container.querySelector('.react-clock__hour-hand') as HTMLDivElement;
 
-      expect(getAngle(hand)).toBeCloseTo(hour * hourAngle + minute * hourMinuteAngle);
+      expect(getAngle(hand)).toBeCloseTo(
+        hour * hourAngle + minute * hourMinuteAngle + second * hourSecondAngle,
+      );
     });
   });
 

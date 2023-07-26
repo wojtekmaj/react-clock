@@ -135,7 +135,7 @@ const Clock: React.FC<ClockProps> = function Clock({
 
   function renderHourHandFn() {
     const angle = value
-      ? getHours(value) * 30 + getMinutes(value) / 2 + getSeconds(value) / 600
+      ? getHours(value) * 30 + getMinutes(value) / 2 + getSeconds(value) / 120
       : 0;
 
     return (
