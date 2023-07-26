@@ -6,11 +6,13 @@ type ViewOptionsProps = {
   renderMinuteMarks: boolean;
   renderNumbers: boolean;
   renderSecondHand: boolean;
+  useMillisecondPrecision: boolean;
   setRenderHourMarks: (renderHourMarks: boolean) => void;
   setRenderMinuteHand: (renderMinuteHand: boolean) => void;
   setRenderMinuteMarks: (renderMinuteMarks: boolean) => void;
   setRenderNumbers: (renderNumbers: boolean) => void;
   setRenderSecondHand: (renderSecondHand: boolean) => void;
+  setUseMillisecondPrecision: (useMillisecondPrecision: boolean) => void;
 };
 
 export default function ViewOptions({
@@ -19,11 +21,13 @@ export default function ViewOptions({
   renderMinuteMarks,
   renderNumbers,
   renderSecondHand,
+  useMillisecondPrecision,
   setRenderHourMarks,
   setRenderMinuteHand,
   setRenderMinuteMarks,
   setRenderNumbers,
   setRenderSecondHand,
+  setUseMillisecondPrecision,
 }: ViewOptionsProps) {
   function onRenderMinuteHandChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
@@ -53,6 +57,12 @@ export default function ViewOptions({
     const { checked } = event.target;
 
     setRenderNumbers(checked);
+  }
+
+  function onUseMillisecondPrecisionChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { checked } = event.target;
+
+    setUseMillisecondPrecision(checked);
   }
 
   return (
@@ -107,6 +117,16 @@ export default function ViewOptions({
           type="checkbox"
         />
         <label htmlFor="renderNumbers">Show numbers</label>
+      </div>
+
+      <div>
+        <input
+          checked={useMillisecondPrecision}
+          id="useMillisecondPrecision"
+          onChange={onUseMillisecondPrecisionChange}
+          type="checkbox"
+        />
+        <label htmlFor="useMillisecondPrecision">Use millisecond precision</label>
       </div>
     </fieldset>
   );

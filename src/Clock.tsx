@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { getHours, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
+import { getHours, getMilliseconds, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 
 import Hand from './Hand';
 import MinuteMark from './MinuteMark';
@@ -49,6 +49,7 @@ export type ClockProps = {
   secondHandOppositeLength?: OppositeHandLength;
   secondHandWidth?: HandWidth;
   size?: React.CSSProperties['width'];
+  useMillisecondPrecision?: boolean;
   value?: string | Date | null;
 };
 
@@ -75,6 +76,7 @@ const Clock: React.FC<ClockProps> = function Clock({
   secondHandOppositeLength,
   secondHandWidth = 1,
   size = 150,
+  useMillisecondPrecision,
   value,
 }) {
   function renderMinuteMarksFn() {
@@ -135,7 +137,10 @@ const Clock: React.FC<ClockProps> = function Clock({
 
   function renderHourHandFn() {
     const angle = value
-      ? getHours(value) * 30 + getMinutes(value) / 2 + getSeconds(value) / 120
+      ? getHours(value) * 30 +
+        getMinutes(value) / 2 +
+        getSeconds(value) / 120 +
+        (useMillisecondPrecision ? getMilliseconds(value) / 120000 : 0)
       : 0;
 
     return (
@@ -155,7 +160,10 @@ const Clock: React.FC<ClockProps> = function Clock({
     }
 
     const angle = value
-      ? getHours(value) * 360 + getMinutes(value) * 6 + getSeconds(value) / 10
+      ? getHours(value) * 360 +
+        getMinutes(value) * 6 +
+        getSeconds(value) / 10 +
+        (useMillisecondPrecision ? getMilliseconds(value) / 10000 : 0)
       : 0;
 
     return (
@@ -174,7 +182,11 @@ const Clock: React.FC<ClockProps> = function Clock({
       return null;
     }
 
-    const angle = value ? getMinutes(value) * 360 + getSeconds(value) * 6 : 0;
+    const angle = value
+      ? getMinutes(value) * 360 +
+        getSeconds(value) * 6 +
+        (useMillisecondPrecision ? getMilliseconds(value) * 0.006 : 0)
+      : 0;
 
     return (
       <Hand

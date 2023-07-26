@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Clock from 'react-clock/src';
 import 'react-clock/src/Clock.css';
 import { useSetInterval } from '@wojtekmaj/react-hooks';
@@ -23,6 +23,7 @@ export default function Test() {
   const [renderMinuteMarks, setRenderMinuteMarks] = useState(true);
   const [renderNumbers, setRenderNumbers] = useState(true);
   const [renderSecondHand, setRenderSecondHand] = useState(true);
+  const [useMillisecondPrecision, setUseMillisecondPrecision] = useState(false);
   const [value, setValue] = useState<LooseValue>(now);
 
   const updateDate = useCallback(() => {
@@ -30,6 +31,25 @@ export default function Test() {
   }, []);
 
   useSetInterval(updateDate, 1000);
+
+  useEffect(() => {
+    if (!useMillisecondPrecision) {
+      return;
+    }
+
+    let animationFrame: number;
+
+    function callback() {
+      updateDate();
+      animationFrame = requestAnimationFrame(callback);
+    }
+
+    animationFrame = requestAnimationFrame(callback);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
+  }, [updateDate, useMillisecondPrecision]);
 
   function renderDebugInfo() {
     const renderTime = (timeToRender: string | Date | null) => {
@@ -57,11 +77,13 @@ export default function Test() {
             renderMinuteMarks={renderMinuteMarks}
             renderNumbers={renderNumbers}
             renderSecondHand={renderSecondHand}
+            useMillisecondPrecision={useMillisecondPrecision}
             setRenderHourMarks={setRenderHourMarks}
             setRenderMinuteHand={setRenderMinuteHand}
             setRenderMinuteMarks={setRenderMinuteMarks}
             setRenderNumbers={setRenderNumbers}
             setRenderSecondHand={setRenderSecondHand}
+            setUseMillisecondPrecision={setUseMillisecondPrecision}
           />
         </aside>
         <main className="Test__container__content">
@@ -81,6 +103,7 @@ export default function Test() {
               renderNumbers={renderNumbers}
               renderSecondHand={renderSecondHand}
               size={200}
+              useMillisecondPrecision={useMillisecondPrecision}
               value={value}
             />
           </form>

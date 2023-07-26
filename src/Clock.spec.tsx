@@ -135,9 +135,12 @@ describe('Clock', () => {
   const hourAngle = fullCircle / 12;
   const hourMinuteAngle = hourAngle / 60;
   const hourSecondAngle = hourMinuteAngle / 60;
+  const hourMillisecondAngle = hourSecondAngle / 1000;
   const minuteAngle = fullCircle / 60;
   const minuteSecondAngle = minuteAngle / 60;
+  const minuteMillisecondAngle = minuteSecondAngle / 1000;
   const secondAngle = fullCircle / 60;
+  const secondMillisecondAngle = secondAngle / 1000;
 
   function getDeg(transform: string) {
     const match = transform.match(/rotate\(([0-9.]*)deg\)/);
@@ -168,7 +171,7 @@ describe('Clock', () => {
       expect(hand).toBeInTheDocument();
     });
 
-    it('is properly angled', () => {
+    it('is properly angled by default', () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
@@ -180,6 +183,25 @@ describe('Clock', () => {
 
       expect(getAngle(hand)).toBeCloseTo(
         hour * hourAngle + minute * hourMinuteAngle + second * hourSecondAngle,
+      );
+    });
+
+    it('is properly angled when given useMillisecondPrecision', () => {
+      const hour = 9;
+      const minute = 20;
+      const second = 47;
+      const millisecond = 321;
+      const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
+
+      const { container } = render(<Clock useMillisecondPrecision value={date} />);
+
+      const hand = container.querySelector('.react-clock__hour-hand') as HTMLDivElement;
+
+      expect(getAngle(hand)).toBeCloseTo(
+        hour * hourAngle +
+          minute * hourMinuteAngle +
+          second * hourSecondAngle +
+          millisecond * hourMillisecondAngle,
       );
     });
   });
@@ -201,7 +223,7 @@ describe('Clock', () => {
       expect(hand).not.toBeInTheDocument();
     });
 
-    it('is properly angled', () => {
+    it('is properly angled by default', () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
@@ -212,6 +234,22 @@ describe('Clock', () => {
       const hand = container.querySelector('.react-clock__minute-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(minute * minuteAngle + second * minuteSecondAngle);
+    });
+
+    it('is properly angled when given useMillisecondPrecision', () => {
+      const hour = 9;
+      const minute = 20;
+      const second = 47;
+      const millisecond = 321;
+      const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
+
+      const { container } = render(<Clock useMillisecondPrecision value={date} />);
+
+      const hand = container.querySelector('.react-clock__minute-hand') as HTMLDivElement;
+
+      expect(getAngle(hand)).toBeCloseTo(
+        minute * minuteAngle + second * minuteSecondAngle + millisecond * minuteMillisecondAngle,
+      );
     });
   });
 
@@ -232,7 +270,7 @@ describe('Clock', () => {
       expect(hand).not.toBeInTheDocument();
     });
 
-    it('is properly angled', () => {
+    it('is properly angled by default', () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
@@ -243,6 +281,22 @@ describe('Clock', () => {
       const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(second * secondAngle);
+    });
+
+    it('is properly angled when given useMillisecondPrecision', () => {
+      const hour = 9;
+      const minute = 20;
+      const second = 47;
+      const millisecond = 321;
+      const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
+
+      const { container } = render(<Clock useMillisecondPrecision value={date} />);
+
+      const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
+
+      expect(getAngle(hand)).toBeCloseTo(
+        second * secondAngle + millisecond * secondMillisecondAngle,
+      );
     });
   });
 });
