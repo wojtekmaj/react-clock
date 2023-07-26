@@ -852,10 +852,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wojtekmaj/date-utils@npm:^1.1.2":
-  version: 1.1.3
-  resolution: "@wojtekmaj/date-utils@npm:1.1.3"
-  checksum: 4ae0eba0876b8c156720c249ddd665efd8da0c42a02bbf037475b8a30554e02fa642e6f1d81d1fffdc02c6d816fb73590ee03c003ac976d91380745533dbf327
+"@wojtekmaj/date-utils@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@wojtekmaj/date-utils@npm:1.5.0"
+  checksum: ad0fbb7345d879f99b7db549af5c9c05407d5eb87ab92f8a5a76b790f3f53f35476d40aa828b7343e3af91b566b34a5aa1fed396accad783e4b52dd9a5a8ba43
   languageName: node
   linkType: hard
 
@@ -4290,7 +4290,7 @@ __metadata:
     "@testing-library/react": ^14.0.0
     "@types/node": "*"
     "@types/react": "*"
-    "@wojtekmaj/date-utils": ^1.1.2
+    "@wojtekmaj/date-utils": ^1.5.0
     clsx: ^2.0.0
     eslint: ^8.26.0
     eslint-config-wojtekmaj: ^0.9.0

@@ -43,7 +43,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@wojtekmaj/date-utils": "^1.1.2",
+    "@wojtekmaj/date-utils": "^1.5.0",
     "clsx": "^2.0.0",
     "get-user-locale": "^2.2.1",
     "prop-types": "^15.6.0"
