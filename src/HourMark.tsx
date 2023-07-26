@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import Mark from './Mark';
 
@@ -10,11 +10,13 @@ type HourMarkProps = React.ComponentProps<typeof Mark> & {
   number?: number;
 };
 
-export default function HourMark({
+const HourMark = memo(function HourMark({
   formatHour = defaultFormatHour,
   locale,
   number,
   ...otherProps
 }: HourMarkProps) {
   return <Mark number={number ? formatHour(locale, number) : null} {...otherProps} />;
-}
+});
+
+export default HourMark;
