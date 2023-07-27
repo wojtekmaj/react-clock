@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Mark from './Mark';
+import Mark from './Mark.js';
 
 describe('Mark', () => {
   it('renders a hand with given name', () => {

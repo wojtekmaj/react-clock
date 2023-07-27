@@ -4,13 +4,13 @@ import 'react-clock/src/Clock.css';
 import { useSetInterval } from '@wojtekmaj/react-hooks';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
-import LocaleOptions from './LocaleOptions';
-import ValueOptions from './ValueOptions';
-import ViewOptions from './ViewOptions';
+import LocaleOptions from './LocaleOptions.js';
+import ValueOptions from './ValueOptions.js';
+import ViewOptions from './ViewOptions.js';
 
 import './Test.css';
 
-import type { LooseValue } from './shared/types';
+import type { LooseValue } from './shared/types.js';
 
 /* eslint-disable no-console */
 

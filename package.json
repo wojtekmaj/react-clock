@@ -2,18 +2,26 @@
   "name": "react-clock",
   "version": "4.4.0",
   "description": "An analog clock for your React app.",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "source": "src/index.ts",
-  "types": "dist/cjs/index.d.ts",
+  "type": "module",
   "sideEffects": [
     "*.css"
   ],
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./src": "./src/index.ts"
+  },
   "scripts": {
     "build": "yarn build-js && yarn copy-styles",
     "build-js": "yarn build-js-esm && yarn build-js-cjs",
     "build-js-esm": "tsc --project tsconfig.build.json --outDir dist/esm --module esnext",
-    "build-js-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs",
+    "build-js-cjs": "tsc --project tsconfig.build.json --outDir dist/cjs --module commonjs && echo '{\n  \"type\": \"commonjs\"\n}' > dist/cjs/package.json",
     "clean": "rimraf dist",
     "copy-styles": "node --loader ts-node/esm ./copy-styles.ts",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
