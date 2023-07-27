@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
-import Mark from './Mark';
+import Mark from './Mark.js';
 
-import { formatHour as defaultFormatHour } from './shared/hourFormatter';
+import { formatHour as defaultFormatHour } from './shared/hourFormatter.js';
 
 type HourMarkProps = React.ComponentProps<typeof Mark> & {
   formatHour?: typeof defaultFormatHour;

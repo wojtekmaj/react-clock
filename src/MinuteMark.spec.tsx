@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import MinuteMark from './MinuteMark';
+import MinuteMark from './MinuteMark.js';
 
 describe('MinuteMark', () => {
   it('renders Mark', () => {

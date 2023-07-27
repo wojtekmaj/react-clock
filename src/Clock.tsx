@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { getHours, getMilliseconds, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 
-import Hand from './Hand';
-import MinuteMark from './MinuteMark';
-import HourMark from './HourMark';
+import Hand from './Hand.js';
+import MinuteMark from './MinuteMark.js';
+import HourMark from './HourMark.js';
 
-import type { formatHour as defaultFormatHour } from './shared/hourFormatter';
+import type { formatHour as defaultFormatHour } from './shared/hourFormatter.js';
 
 import {
   isHandLength,
@@ -15,7 +15,7 @@ import {
   isHandWidth,
   isMarkLength,
   isMarkWidth,
-} from './shared/propTypes';
+} from './shared/propTypes.js';
 
 import type {
   ClassName,
@@ -24,7 +24,7 @@ import type {
   MarkLength,
   MarkWidth,
   OppositeHandLength,
-} from './shared/types';
+} from './shared/types.js';
 
 export type ClockProps = {
   className?: ClassName;

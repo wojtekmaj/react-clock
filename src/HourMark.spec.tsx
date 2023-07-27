@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import HourMark from './HourMark';
+import HourMark from './HourMark.js';
 
 describe('HourMark', () => {
   it('renders Mark', () => {

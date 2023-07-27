@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Clock from './Clock';
+import Clock from './Clock.js';
 
 describe('Clock', () => {
   describe('<time> element', () => {

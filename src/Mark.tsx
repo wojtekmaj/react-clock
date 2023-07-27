@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { MarkLength, MarkWidth } from './shared/types';
+import type { MarkLength, MarkWidth } from './shared/types.js';
 
 type MarkProps = {
   angle?: number;

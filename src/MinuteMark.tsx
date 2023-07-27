@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import Mark from './Mark';
+import Mark from './Mark.js';
 
 type MinuteMarkProps = React.ComponentProps<typeof Mark>;
 

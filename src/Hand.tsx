@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { HandLength, HandWidth, OppositeHandLength } from './shared/types';
+import type { HandLength, HandWidth, OppositeHandLength } from './shared/types.js';
 
 type HandProps = {
   angle?: number;
