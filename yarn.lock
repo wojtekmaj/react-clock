@@ -5086,9 +5086,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-clock@workspace:package":
+"react-clock@workspace:packages/react-clock":
   version: 0.0.0-use.local
-  resolution: "react-clock@workspace:package"
+  resolution: "react-clock@workspace:packages/react-clock"
   dependencies:
     "@testing-library/jest-dom": ^5.15.0
     "@testing-library/react": ^14.0.0
@@ -5848,7 +5848,7 @@ __metadata:
     eslint-config-wojtekmaj: ^0.9.0
     prettier: ^2.7.0
     react: ^18.2.0
-    react-clock: "workspace:package"
+    react-clock: "workspace:packages/react-clock"
     react-dom: ^18.2.0
     typescript: ^5.0.0
     vite: ^4.0.0

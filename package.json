@@ -4,7 +4,7 @@
   "description": "react-clock monorepo",
   "type": "module",
   "workspaces": [
-    "package",
+    "packages/*",
     "test"
   ],
   "scripts": {
