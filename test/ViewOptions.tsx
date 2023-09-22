@@ -1,5 +1,3 @@
-import React from 'react';
-
 type ViewOptionsProps = {
   renderHourMarks: boolean;
   renderMinuteHand: boolean;

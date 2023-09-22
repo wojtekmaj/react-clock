@@ -1,4 +1,3 @@
-import React from 'react';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
 import type { LooseValue } from './shared/types.js';
