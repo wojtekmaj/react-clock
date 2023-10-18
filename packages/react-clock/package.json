@@ -1,6 +1,6 @@
 {
   "name": "react-clock",
-  "version": "4.5.0",
+  "version": "4.5.1",
   "description": "An analog clock for your React app.",
   "type": "module",
   "sideEffects": [
