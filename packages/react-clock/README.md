@@ -14,7 +14,7 @@ An analog clock for your React app.
 
 A minimal demo page can be found in `sample` directory.
 
-[Online demo](http://projects.wojtekmaj.pl/react-clock/) is also available!
+[Online demo](https://projects.wojtekmaj.pl/react-clock/) is also available!
 
 ## Installation
 
