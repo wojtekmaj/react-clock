@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/react-clock.svg)](https://www.npmjs.com/package/react-clock) ![downloads](https://img.shields.io/npm/dt/react-clock.svg) [![CI](https://github.com/wojtekmaj/react-clock/workflows/CI/badge.svg)](https://github.com/wojtekmaj/react-clock/actions)
+[![npm](https://img.shields.io/npm/v/react-clock.svg)](https://www.npmjs.com/package/react-clock) ![downloads](https://img.shields.io/npm/dt/react-clock.svg) [![CI](https://github.com/wojtekmaj/react-clock/actions/workflows/ci.yml/badge.svg)](https://github.com/wojtekmaj/react-clock/actions)
 
 # react-clock
 
