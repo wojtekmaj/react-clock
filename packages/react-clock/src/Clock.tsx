@@ -27,32 +27,179 @@ import type {
 } from './shared/types.js';
 
 export type ClockProps = {
+  /**
+   * Class name(s) that will be added along with `"react-clock"` to the main react-clock `<time>` element.
+   *
+   * @example 'class1 class2'
+   * @example ['class1', 'class2 class3']
+   */
   className?: ClassName;
+  /**
+   * Function called to override default formatting of hour marks. Can be used to use your own formatting function.
+   *
+   * @example (locale, hour) => formatHour(hour, 'HH')
+   */
   formatHour?: typeof defaultFormatHour;
+  /**
+   * Hour hand length, in %.
+   *
+   * @default 50
+   * @example 80
+   */
   hourHandLength?: HandLength;
+  /**
+   * The length of the part of an hour hand on the opposite side the hand is pointing to, in %.
+   *
+   * @default 10
+   * @example 20
+   */
   hourHandOppositeLength?: OppositeHandLength;
+  /**
+   * Hour hand width, in pixels.
+   *
+   * @default 4
+   * @example 3
+   */
   hourHandWidth?: HandWidth;
+  /**
+   * Hour marks length, in %.
+   *
+   * @default 10
+   * @example 8
+   */
   hourMarksLength?: MarkLength;
+  /**
+   * Hour marks width, in pixels.
+   *
+   * @default 3
+   * @example 2
+   */
   hourMarksWidth?: MarkWidth;
+  /**
+   * Locale that should be used by the clock. Can be any [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag).
+   *
+   * **Note**: When using SSR, setting this prop may help resolving hydration errors caused by locale mismatch between server and client.
+   *
+   * @example 'hu-HU'
+   */
   locale?: string;
+  /**
+   * Minute hand length, in %.
+   *
+   * @default 70
+   * @example 80
+   */
   minuteHandLength?: HandLength;
+  /**
+   * The length of the part of a minute hand on the opposite side the hand is pointing to, in %.
+   *
+   * @default 10
+   * @example 20
+   */
   minuteHandOppositeLength?: OppositeHandLength;
+  /**
+   * Minute hand width, in pixels.
+   *
+   * @default 2
+   * @example 3
+   */
   minuteHandWidth?: HandWidth;
+  /**
+   * Minute marks length, in %.
+   *
+   * @default 6
+   * @example 8
+   */
   minuteMarksLength?: MarkLength;
+  /**
+   * Minute marks width, in pixels.
+   *
+   * @default 1
+   * @example 2
+   */
   minuteMarksWidth?: MarkWidth;
+  /**
+   * Whether hour marks shall be rendered.
+   *
+   * @default true
+   * @example false
+   */
   renderHourMarks?: boolean;
+  /**
+   * Whether minute hand shall be rendered.
+   *
+   * @default true
+   * @example false
+   */
   renderMinuteHand?: boolean;
+  /**
+   * Whether minute marks shall be rendered.
+   *
+   * @default true
+   * @example false
+   */
   renderMinuteMarks?: boolean;
+  /**
+   * Whether numbers shall be rendered.
+   *
+   * @default true
+   * @example false
+   */
   renderNumbers?: boolean;
+  /**
+   * Whether second hand shall be rendered.
+   *
+   * @default true
+   * @example false
+   */
   renderSecondHand?: boolean;
+  /**
+   * Second hand length, in %.
+   *
+   * @default 90
+   * @example 80
+   */
   secondHandLength?: HandLength;
+  /**
+   * The length of the part of a second hand on the opposite side the hand is pointing to, in %.
+   *
+   * @default 10
+   * @example 20
+   */
   secondHandOppositeLength?: OppositeHandLength;
+  /**
+   * Second hand width, in pixels.
+   *
+   * @default 1
+   * @example 2
+   */
   secondHandWidth?: HandWidth;
+  /**
+   * Clock size, in pixels (e.g. `200`) or as string (e.g. `"50vw"`).
+   *
+   * @default 150
+   * @example 260
+   * @example '50vw'
+   */
   size?: React.CSSProperties['width'];
+  /**
+   * Whether to use millisecond precision.
+   *
+   * @default false
+   * @example true
+   */
   useMillisecondPrecision?: boolean;
+  /**
+   * Clock value. Must be provided.
+   *
+   * @example new Date()
+   */
   value?: string | Date | null;
 };
 
+/**
+ * Displays a complete clock.
+ */
 const Clock: React.FC<ClockProps> = function Clock({
   className,
   formatHour,
