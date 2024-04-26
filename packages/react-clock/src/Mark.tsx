@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { MarkLength, MarkWidth } from './shared/types.js';
 
 type MarkProps = {
