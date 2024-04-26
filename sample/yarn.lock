@@ -1660,7 +1660,6 @@ __metadata:
   dependencies:
     "@vitejs/plugin-react": "npm:^4.2.0"
     "@wojtekmaj/react-hooks": "npm:^1.16.2"
-    prop-types: "npm:^15.6.0"
     react: "npm:^18.2.0"
     react-clock: "npm:latest"
     react-dom: "npm:^18.2.0"

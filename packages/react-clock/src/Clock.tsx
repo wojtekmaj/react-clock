@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { getHours, getMilliseconds, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 
@@ -7,14 +6,6 @@ import MinuteMark from './MinuteMark.js';
 import HourMark from './HourMark.js';
 
 import type { formatHour as defaultFormatHour } from './shared/hourFormatter.js';
-
-import {
-  isHandLength,
-  isOppositeHandLength,
-  isHandWidth,
-  isMarkLength,
-  isMarkWidth,
-} from './shared/propTypes.js';
 
 import type {
   ClassName,
@@ -360,32 +351,6 @@ const Clock: React.FC<ClockProps> = function Clock({
       {renderSecondHandFn()}
     </time>
   );
-};
-
-Clock.propTypes = {
-  className: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-  formatHour: PropTypes.func,
-  hourHandLength: isHandLength,
-  hourHandOppositeLength: isOppositeHandLength,
-  hourHandWidth: isHandWidth,
-  hourMarksLength: isMarkLength,
-  hourMarksWidth: isMarkWidth,
-  locale: PropTypes.string,
-  minuteHandLength: isHandLength,
-  minuteHandOppositeLength: isOppositeHandLength,
-  minuteHandWidth: isHandWidth,
-  minuteMarksLength: isMarkLength,
-  minuteMarksWidth: isMarkWidth,
-  renderHourMarks: PropTypes.bool,
-  renderMinuteHand: PropTypes.bool,
-  renderMinuteMarks: PropTypes.bool,
-  renderNumbers: PropTypes.bool,
-  renderSecondHand: PropTypes.bool,
-  secondHandLength: isHandLength,
-  secondHandOppositeLength: isOppositeHandLength,
-  secondHandWidth: isHandWidth,
-  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
 };
 
 export default Clock;
