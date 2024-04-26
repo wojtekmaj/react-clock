@@ -190,7 +190,7 @@ export type ClockProps = {
 /**
  * Displays a complete clock.
  */
-const Clock: React.FC<ClockProps> = function Clock({
+export default function Clock({
   className,
   formatHour,
   hourHandLength = 50,
@@ -215,7 +215,7 @@ const Clock: React.FC<ClockProps> = function Clock({
   size = 150,
   useMillisecondPrecision,
   value,
-}) {
+}: ClockProps) {
   function renderMinuteMarksFn() {
     if (!renderMinuteMarks) {
       return null;
@@ -351,6 +351,4 @@ const Clock: React.FC<ClockProps> = function Clock({
       {renderSecondHandFn()}
     </time>
   );
-};
-
-export default Clock;
+}
