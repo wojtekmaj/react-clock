@@ -741,14 +741,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wojtekmaj/react-hooks@npm:^1.16.2":
-  version: 1.16.2
-  resolution: "@wojtekmaj/react-hooks@npm:1.16.2"
-  dependencies:
-    "@types/react": "npm:*"
+"@wojtekmaj/react-hooks@npm:^1.20.0":
+  version: 1.20.0
+  resolution: "@wojtekmaj/react-hooks@npm:1.20.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 10c0/09492c1ed0bdaa9616c30917c2851a851c79df9dc660d39015ae3cdb9beb2928143242a9944c7a3435a034f7b95376f7a95a75074022066f6fb224f0e1b08862
+    "@types/react": ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10c0/4d19e20f71870212cd34147bd62fff3be54b85950e17fd66e3d8edb7b548bf96fac42618293e0734167fbd0245c54598123c2f008c53443391e6e321612c2c14
   languageName: node
   linkType: hard
 
@@ -1659,7 +1661,7 @@ __metadata:
   resolution: "react-clock-sample-page@workspace:."
   dependencies:
     "@vitejs/plugin-react": "npm:^4.2.0"
-    "@wojtekmaj/react-hooks": "npm:^1.16.2"
+    "@wojtekmaj/react-hooks": "npm:^1.20.0"
     react: "npm:^18.2.0"
     react-clock: "npm:latest"
     react-dom: "npm:^18.2.0"
