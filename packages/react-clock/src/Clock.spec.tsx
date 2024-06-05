@@ -155,7 +155,7 @@ describe('Clock', () => {
       throw new Error('Could not parse transform');
     }
 
-    return parseFloat(deg);
+    return Number.parseFloat(deg);
   }
 
   function getAngle(hand: HTMLElement) {
