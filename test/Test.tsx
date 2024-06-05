@@ -12,8 +12,6 @@ import './Test.css';
 
 import type { LooseValue } from './shared/types.js';
 
-/* eslint-disable no-console */
-
 const now = new Date();
 
 export default function Test() {
