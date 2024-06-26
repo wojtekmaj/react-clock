@@ -8,7 +8,13 @@ type MarkProps = {
   width?: MarkWidth;
 };
 
-export default function Mark({ angle = 0, length = 10, name, width = 1, number }: MarkProps) {
+export default function Mark({
+  angle = 0,
+  length = 10,
+  name,
+  width = 1,
+  number,
+}: MarkProps): React.ReactElement {
   return (
     <div
       className={`react-clock__mark react-clock__${name}-mark`}

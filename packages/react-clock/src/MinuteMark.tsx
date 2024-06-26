@@ -4,7 +4,7 @@ import Mark from './Mark.js';
 
 type MinuteMarkProps = React.ComponentProps<typeof Mark>;
 
-const MinuteMark = memo(function MinuteMark(props: MinuteMarkProps) {
+const MinuteMark: React.FC<MinuteMarkProps> = memo(function MinuteMark(props) {
   return <Mark {...props} />;
 });
 

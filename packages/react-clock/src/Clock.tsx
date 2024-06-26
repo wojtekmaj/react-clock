@@ -215,7 +215,7 @@ export default function Clock({
   size = 150,
   useMillisecondPrecision,
   value,
-}: ClockProps) {
+}: ClockProps): React.ReactElement {
   function renderMinuteMarksFn() {
     if (!renderMinuteMarks) {
       return null;

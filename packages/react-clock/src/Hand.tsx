@@ -14,7 +14,7 @@ export default function Hand({
   length = 100,
   oppositeLength = 10,
   width = 1,
-}: HandProps) {
+}: HandProps): React.ReactElement {
   return (
     <div
       className={`react-clock__hand react-clock__${name}-hand`}

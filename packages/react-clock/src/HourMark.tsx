@@ -10,7 +10,7 @@ type HourMarkProps = React.ComponentProps<typeof Mark> & {
   number?: number;
 };
 
-const HourMark = memo(function HourMark({
+const HourMark: React.FC<HourMarkProps> = memo(function HourMark({
   formatHour = defaultFormatHour,
   locale,
   number,
