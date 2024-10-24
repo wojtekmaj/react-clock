@@ -3,8 +3,10 @@ import { getHours, getMilliseconds, getMinutes, getSeconds } from '@wojtekmaj/da
 
 import Hand from './Hand.js';
 import Mark from './Mark.js';
+import MarkNumber from './MarkNumber.js';
 
 import { formatHour as defaultFormatHour } from './shared/hourFormatter.js';
+import { safeMax } from './shared/utils.js';
 
 import type {
   ClassName,
@@ -252,7 +254,6 @@ export default function Clock({
           angle={i * 30}
           length={hourMarksLength}
           name="hour"
-          number={renderNumbers ? formatHour(locale, i) : undefined}
           width={hourMarksWidth}
         />,
       );
@@ -260,11 +261,36 @@ export default function Clock({
     return hourMarks;
   }
 
+  function renderNumbersFn() {
+    if (!renderNumbers) {
+      return null;
+    }
+
+    const numbers = [];
+    for (let i = 1; i <= 12; i += 1) {
+      numbers.push(
+        <MarkNumber
+          key={`number_${i}`}
+          angle={i * 30}
+          length={safeMax(
+            renderHourMarks && hourMarksLength,
+            renderMinuteMarks && minuteMarksLength,
+            0,
+          )}
+          name="number"
+          number={formatHour(locale, i)}
+        />,
+      );
+    }
+    return numbers;
+  }
+
   function renderFace() {
     return (
       <div className="react-clock__face">
         {renderMinuteMarksFn()}
         {renderHourMarksFn()}
+        {renderNumbersFn()}
       </div>
     );
   }

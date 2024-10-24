@@ -6,7 +6,6 @@ type MarkProps = {
   angle?: number;
   length?: MarkLength;
   name: string;
-  number?: React.ReactNode;
   width?: MarkWidth;
 };
 
@@ -15,7 +14,6 @@ const Mark: React.FC<MarkProps> = memo(function Mark({
   length = 10,
   name,
   width = 1,
-  number,
 }: MarkProps): React.ReactElement {
   return (
     <div
@@ -32,17 +30,6 @@ const Mark: React.FC<MarkProps> = memo(function Mark({
           bottom: `${100 - length / 2}%`,
         }}
       />
-      {number ? (
-        <div
-          className="react-clock__mark__number"
-          style={{
-            transform: `rotate(-${angle}deg)`,
-            top: `${length / 2}%`,
-          }}
-        >
-          {number}
-        </div>
-      ) : null}
     </div>
   );
 });

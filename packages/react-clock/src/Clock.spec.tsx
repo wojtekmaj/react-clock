@@ -92,10 +92,10 @@ describe('Clock', () => {
     it('has hour numbers given renderNumbers flag', () => {
       const { container } = render(<Clock renderNumbers />);
 
-      const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
+      const numberMarks = container.querySelectorAll('.react-clock__number-mark');
 
-      hourMarks.forEach((hourMark, index) => {
-        expect(hourMark).toHaveTextContent(`${index + 1}`);
+      numberMarks.forEach((numberMark, index) => {
+        expect(numberMark).toHaveTextContent(`${index + 1}`);
       });
     });
 
@@ -103,9 +103,9 @@ describe('Clock', () => {
       const formatHour = () => 'H';
       const { container } = render(<Clock formatHour={formatHour} renderNumbers />);
 
-      const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
+      const numberMarks = container.querySelectorAll('.react-clock__number-mark');
 
-      expect(hourMarks[0]).toHaveTextContent('H');
+      expect(numberMarks[0]).toHaveTextContent('H');
     });
 
     it('has only minute marks when renderHourMarks is false', () => {
