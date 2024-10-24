@@ -40,7 +40,15 @@ describe('Clock', () => {
 
       const time = container.querySelector('time');
 
-      expect(time).toHaveAttribute('datetime', date.toISOString());
+      expect(time).toHaveAttribute(
+        'datetime',
+        date.toLocaleTimeString('en', {
+          hourCycle: 'h23',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        }),
+      );
     });
 
     it('has proper datetime attribute when given string value', () => {

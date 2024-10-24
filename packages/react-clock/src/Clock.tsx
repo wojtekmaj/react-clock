@@ -339,7 +339,17 @@ export default function Clock({
   return (
     <time
       className={clsx('react-clock', className)}
-      dateTime={value instanceof Date ? value.toISOString() : value || undefined}
+      dateTime={
+        value instanceof Date
+          ? // Returns a string in the format "HH:MM" or "HH:MM:SS"
+            value.toLocaleTimeString('en', {
+              hourCycle: 'h23',
+              hour: '2-digit',
+              minute: renderMinuteHand ? '2-digit' : undefined,
+              second: renderSecondHand ? '2-digit' : undefined,
+            })
+          : value || undefined
+      }
       style={{
         width: size,
         height: size,
