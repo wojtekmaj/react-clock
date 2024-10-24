@@ -99,7 +99,7 @@ describe('Clock', () => {
       });
     });
 
-    it('passes formatHour to HourMark components', () => {
+    it('uses formatHour properly if given', () => {
       const formatHour = () => 'H';
       const { container } = render(<Clock formatHour={formatHour} renderNumbers />);
 

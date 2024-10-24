@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import type { MarkLength, MarkWidth } from './shared/types.js';
 
 type MarkProps = {
@@ -8,7 +10,7 @@ type MarkProps = {
   width?: MarkWidth;
 };
 
-export default function Mark({
+const Mark: React.FC<MarkProps> = memo(function Mark({
   angle = 0,
   length = 10,
   name,
@@ -43,4 +45,6 @@ export default function Mark({
       ) : null}
     </div>
   );
-}
+});
+
+export default Mark;

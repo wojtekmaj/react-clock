@@ -2,10 +2,9 @@ import clsx from 'clsx';
 import { getHours, getMilliseconds, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
 
 import Hand from './Hand.js';
-import MinuteMark from './MinuteMark.js';
-import HourMark from './HourMark.js';
+import Mark from './Mark.js';
 
-import type { formatHour as defaultFormatHour } from './shared/hourFormatter.js';
+import { formatHour as defaultFormatHour } from './shared/hourFormatter.js';
 
 import type {
   ClassName,
@@ -192,7 +191,7 @@ export type ClockProps = {
  */
 export default function Clock({
   className,
-  formatHour,
+  formatHour = defaultFormatHour,
   hourHandLength = 50,
   hourHandOppositeLength,
   hourHandWidth = 4,
@@ -227,7 +226,7 @@ export default function Clock({
 
       if (!isHourMark) {
         minuteMarks.push(
-          <MinuteMark
+          <Mark
             key={`minute_${i}`}
             angle={i * 6}
             length={minuteMarksLength}
@@ -248,14 +247,12 @@ export default function Clock({
     const hourMarks = [];
     for (let i = 1; i <= 12; i += 1) {
       hourMarks.push(
-        <HourMark
+        <Mark
           key={`hour_${i}`}
           angle={i * 30}
-          formatHour={formatHour}
           length={hourMarksLength}
-          locale={locale}
           name="hour"
-          number={renderNumbers ? i : undefined}
+          number={renderNumbers ? formatHour(locale, i) : undefined}
           width={hourMarksWidth}
         />,
       );
