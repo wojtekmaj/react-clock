@@ -132,8 +132,8 @@ export type ClockProps = {
   /**
    * Whether numbers shall be rendered.
    *
-   * @default true
-   * @example false
+   * @default false
+   * @example true
    */
   renderNumbers?: boolean;
   /**
