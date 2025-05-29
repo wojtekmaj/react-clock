@@ -1024,10 +1024,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wojtekmaj/date-utils@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@wojtekmaj/date-utils@npm:1.5.0"
-  checksum: 10c0/30baed99099d8a85861aa293191533833925a9edcc12e5969a012e14fd600213978553e40eefb6f9ef9b62f53d6072b4c34b3d60d6387dab28a62cc5dc5b3a14
+"@wojtekmaj/date-utils@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "@wojtekmaj/date-utils@npm:2.0.2"
+  checksum: 10c0/6a55542cf1d5d9477b0267b1df040b1ff2edef36e6622a99e2cbd9c3830f87415f767dc969e796e02bdd722c29a901e4826ba0a3ad123afb4fac8f105d08064f
   languageName: node
   linkType: hard
 
@@ -2358,7 +2358,7 @@ __metadata:
     "@types/node": "npm:*"
     "@types/react": "npm:*"
     "@types/react-dom": "npm:*"
-    "@wojtekmaj/date-utils": "npm:^1.5.0"
+    "@wojtekmaj/date-utils": "npm:^2.0.2"
     clsx: "npm:^2.0.0"
     cpy-cli: "npm:^5.0.0"
     get-user-locale: "npm:^2.2.1"
@@ -2739,7 +2739,7 @@ __metadata:
     "@biomejs/biome": "npm:1.9.0"
     "@types/react": "npm:*"
     "@vitejs/plugin-react": "npm:^4.3.4"
-    "@wojtekmaj/date-utils": "npm:^1.5.0"
+    "@wojtekmaj/date-utils": "npm:^2.0.2"
     "@wojtekmaj/react-hooks": "npm:^1.20.0"
     react: "npm:^18.2.0"
     react-clock: "workspace:packages/react-clock"

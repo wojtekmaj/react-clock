@@ -52,7 +52,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@wojtekmaj/date-utils": "^1.5.0",
+    "@wojtekmaj/date-utils": "^2.0.2",
     "clsx": "^2.0.0",
     "get-user-locale": "^2.2.1"
   },
