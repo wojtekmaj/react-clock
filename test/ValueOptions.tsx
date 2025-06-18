@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
 
 import type { LooseValue } from './shared/types.js';
@@ -8,6 +9,8 @@ type ValueOptionsProps = {
 };
 
 export default function ValueOptions({ setValue, value }: ValueOptionsProps) {
+  const hourId = useId();
+
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value: nextValue } = event.target;
 
@@ -19,9 +22,9 @@ export default function ValueOptions({ setValue, value }: ValueOptionsProps) {
       <legend>Set hour externally</legend>
 
       <div>
-        <label htmlFor="hour">Hour</label>
+        <label htmlFor={hourId}>Hour</label>
         <input
-          id="hour"
+          id={hourId}
           onChange={onChange}
           type="time"
           value={value ? getHoursMinutesSeconds(value) : ''}

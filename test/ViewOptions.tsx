@@ -1,3 +1,5 @@
+import { useId } from 'react';
+
 type ViewOptionsProps = {
   renderHourMarks: boolean;
   renderMinuteHand: boolean;
@@ -27,6 +29,13 @@ export default function ViewOptions({
   setRenderSecondHand,
   setUseMillisecondPrecision,
 }: ViewOptionsProps) {
+  const renderMinuteHandId = useId();
+  const renderSecondHandId = useId();
+  const renderHourMarksId = useId();
+  const renderMinuteMarksId = useId();
+  const renderNumbersId = useId();
+  const useMillisecondPrecisionId = useId();
+
   function onRenderMinuteHandChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
@@ -70,61 +79,61 @@ export default function ViewOptions({
       <div>
         <input
           checked={renderMinuteHand}
-          id="renderMinuteHand"
+          id={renderMinuteHandId}
           onChange={onRenderMinuteHandChange}
           type="checkbox"
         />
-        <label htmlFor="renderMinuteHand">Show minute hand</label>
+        <label htmlFor={renderMinuteHandId}>Show minute hand</label>
       </div>
 
       <div>
         <input
           checked={renderSecondHand}
-          id="renderSecondHand"
+          id={renderSecondHandId}
           onChange={onRenderSecondHandChange}
           type="checkbox"
         />
-        <label htmlFor="renderSecondHand">Show second hand</label>
+        <label htmlFor={renderSecondHandId}>Show second hand</label>
       </div>
 
       <div>
         <input
           checked={renderHourMarks}
-          id="renderHourMarks"
+          id={renderHourMarksId}
           onChange={onRenderHourMarksChange}
           type="checkbox"
         />
-        <label htmlFor="renderHourMarks">Show hour marks</label>
+        <label htmlFor={renderHourMarksId}>Show hour marks</label>
       </div>
 
       <div>
         <input
           checked={renderMinuteMarks}
-          id="renderMinuteMarks"
+          id={renderMinuteMarksId}
           onChange={onRenderMinuteMarksChange}
           type="checkbox"
         />
-        <label htmlFor="renderMinuteMarks">Show minute marks</label>
+        <label htmlFor={renderMinuteMarksId}>Show minute marks</label>
       </div>
 
       <div>
         <input
           checked={renderNumbers}
-          id="renderNumbers"
+          id={renderNumbersId}
           onChange={onRenderNumbersChange}
           type="checkbox"
         />
-        <label htmlFor="renderNumbers">Show numbers</label>
+        <label htmlFor={renderNumbersId}>Show numbers</label>
       </div>
 
       <div>
         <input
           checked={useMillisecondPrecision}
-          id="useMillisecondPrecision"
+          id={useMillisecondPrecisionId}
           onChange={onUseMillisecondPrecisionChange}
           type="checkbox"
         />
-        <label htmlFor="useMillisecondPrecision">Use millisecond precision</label>
+        <label htmlFor={useMillisecondPrecisionId}>Use millisecond precision</label>
       </div>
     </fieldset>
   );
