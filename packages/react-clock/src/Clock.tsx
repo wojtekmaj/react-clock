@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { getHours, getMilliseconds, getMinutes, getSeconds } from '@wojtekmaj/date-utils';
+import clsx from 'clsx';
 
 import Hand from './Hand.js';
 import Mark from './Mark.js';

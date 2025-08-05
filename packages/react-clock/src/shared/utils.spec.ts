@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+
 import { safeMax } from './utils.js';
 
 describe('safeMax', () => {
