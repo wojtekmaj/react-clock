@@ -19,7 +19,7 @@ describe('Mark', () => {
 
     const mark = container.querySelector('.react-clock__mark');
 
-    expect(mark).toHaveStyle('transform: rotate(0deg)');
+    expect(mark).toHaveStyle('transform: matrix(1, 0, 0, 1, 0, 0)'); // rotate(0deg)
   });
 
   it('renders properly angled mark given angle prop', () => {
@@ -27,7 +27,7 @@ describe('Mark', () => {
 
     const mark = container.querySelector('.react-clock__mark');
 
-    expect(mark).toHaveStyle('transform: rotate(15deg)');
+    expect(mark).toHaveStyle('transform: matrix(0.965926, 0.258819, -0.258819, 0.965926, 0, 0)'); // rotate(15deg)
   });
 
   it('renders mark with 10% length by default', () => {
