@@ -17,7 +17,7 @@ describe('MarkNumber', () => {
 
     const markNumber = container.querySelector('.react-clock__mark__number');
 
-    expect(markNumber).toHaveStyle('transform: rotate(-0deg)');
+    expect(markNumber).toHaveStyle('transform: matrix(1, 0, 0, 1, 0, 0)'); // rotate(0deg)
   });
 
   it('renders properly angled mark given angle prop', () => {
@@ -25,6 +25,8 @@ describe('MarkNumber', () => {
 
     const markNumber = container.querySelector('.react-clock__mark__number');
 
-    expect(markNumber).toHaveStyle('transform: rotate(-15deg)');
+    expect(markNumber).toHaveStyle(
+      'transform: matrix(0.965926, -0.258819, 0.258819, 0.965926, 0, 0)',
+    ); // rotate(-15deg)
   });
 });

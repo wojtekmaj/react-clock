@@ -150,19 +150,32 @@ describe('Clock', () => {
   const secondMillisecondAngle = secondAngle / 1000;
 
   function getDeg(transform: string) {
-    const match = transform.match(/rotate\(([0-9.]*)deg\)/);
+    const match = transform.match(
+      /matrix\((-?[\d.]+), (-?[\d.]+), (-?[\d.]+), (-?[\d.]+), (-?[\d.]+), (-?[\d.]+)\)/,
+    );
 
     if (!match) {
       throw new Error('Could not parse transform');
     }
 
-    const deg = match[1];
+    const [_, ...rawNumbers] = match;
 
-    if (!deg) {
+    const numbers = rawNumbers.map(Number.parseFloat);
+
+    const a = numbers[0];
+    const b = numbers[1];
+
+    if (typeof a !== 'number' || typeof b !== 'number') {
       throw new Error('Could not parse transform');
     }
 
-    return Number.parseFloat(deg);
+    const radians = Math.atan2(b, a);
+    const degrees = radians * (180 / Math.PI);
+
+    // Normalize to [0, 360)
+    const normalized = ((degrees % 360) + 360) % 360;
+
+    return normalized;
   }
 
   function getAngle(hand: HTMLElement) {

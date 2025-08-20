@@ -19,7 +19,7 @@ describe('Hand', () => {
 
     const hand = container.querySelector('.react-clock__hand');
 
-    expect(hand).toHaveStyle('transform: rotate(0deg)');
+    expect(hand).toHaveStyle('transform: matrix(1, 0, 0, 1, 0, 0)'); // rotate(0deg)
   });
 
   it('renders properly angled hand given angle prop', () => {
@@ -27,7 +27,7 @@ describe('Hand', () => {
 
     const hand = container.querySelector('.react-clock__hand');
 
-    expect(hand).toHaveStyle('transform: rotate(15deg)');
+    expect(hand).toHaveStyle('transform: matrix(0.965926, 0.258819, -0.258819, 0.965926, 0, 0)'); // rotate(15deg)
   });
 
   it('renders hand with 100% length by default', () => {
