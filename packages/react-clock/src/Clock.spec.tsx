@@ -1,20 +1,20 @@
 import { describe, expect, it } from 'vitest';
-import { render } from '@testing-library/react';
+import { render } from 'vitest-browser-react';
 
 import Clock from './Clock.js';
 
 describe('Clock', () => {
   describe('<time> element', () => {
-    it('is rendered properly', () => {
-      const { container } = render(<Clock />);
+    it('is rendered properly', async () => {
+      const { container } = await render(<Clock />);
 
       const time = container.querySelector('time');
 
       expect(time).toBeInTheDocument();
     });
 
-    it('has 150px size by default', () => {
-      const { container } = render(<Clock />);
+    it('has 150px size by default', async () => {
+      const { container } = await render(<Clock />);
 
       const time = container.querySelector('time');
 
@@ -22,20 +22,20 @@ describe('Clock', () => {
       expect(time).toHaveStyle('height: 150px');
     });
 
-    it('has proper size when given size', () => {
+    it('has proper size when given size', async () => {
       const size = 167;
 
-      const { container } = render(<Clock size={size} />);
+      const { container } = await render(<Clock size={size} />);
 
       const time = container.querySelector('time');
 
       expect(time).toHaveAttribute('style', `width: ${size}px; height: ${size}px;`);
     });
 
-    it('has proper datetime attribute when given Date value', () => {
+    it('has proper datetime attribute when given Date value', async () => {
       const date = new Date();
 
-      const { container } = render(<Clock value={date} />);
+      const { container } = await render(<Clock value={date} />);
 
       const time = container.querySelector('time');
 
@@ -50,10 +50,10 @@ describe('Clock', () => {
       );
     });
 
-    it('has proper datetime attribute when given string value', () => {
+    it('has proper datetime attribute when given string value', async () => {
       const date = '22:17:00';
 
-      const { container } = render(<Clock value={date} />);
+      const { container } = await render(<Clock value={date} />);
 
       const time = container.querySelector('time');
 
@@ -62,16 +62,16 @@ describe('Clock', () => {
   });
 
   describe('clock face', () => {
-    it('is rendered properly', () => {
-      const { container } = render(<Clock />);
+    it('is rendered properly', async () => {
+      const { container } = await render(<Clock />);
 
       const face = container.querySelector('.react-clock__face');
 
       expect(face).toBeInTheDocument();
     });
 
-    it('has hour and minute marks by default', () => {
-      const { container } = render(<Clock />);
+    it('has hour and minute marks by default', async () => {
+      const { container } = await render(<Clock />);
 
       const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
       const minuteMarks = container.querySelectorAll('.react-clock__minute-mark');
@@ -80,16 +80,16 @@ describe('Clock', () => {
       expect(minuteMarks).toHaveLength(60 - 12);
     });
 
-    it('does not have hour numbers rendered by default', () => {
-      const { container } = render(<Clock />);
+    it('does not have hour numbers rendered by default', async () => {
+      const { container } = await render(<Clock />);
 
       const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
 
       expect(hourMarks[0]).not.toHaveTextContent('1');
     });
 
-    it('has hour numbers given renderNumbers flag', () => {
-      const { container } = render(<Clock renderNumbers />);
+    it('has hour numbers given renderNumbers flag', async () => {
+      const { container } = await render(<Clock renderNumbers />);
 
       const numberMarks = container.querySelectorAll('.react-clock__number-mark');
 
@@ -98,17 +98,17 @@ describe('Clock', () => {
       });
     });
 
-    it('uses formatHour properly if given', () => {
+    it('uses formatHour properly if given', async () => {
       const formatHour = () => 'H';
-      const { container } = render(<Clock formatHour={formatHour} renderNumbers />);
+      const { container } = await render(<Clock formatHour={formatHour} renderNumbers />);
 
       const numberMarks = container.querySelectorAll('.react-clock__number-mark');
 
       expect(numberMarks[0]).toHaveTextContent('H');
     });
 
-    it('has only minute marks when renderHourMarks is false', () => {
-      const { container } = render(<Clock renderHourMarks={false} />);
+    it('has only minute marks when renderHourMarks is false', async () => {
+      const { container } = await render(<Clock renderHourMarks={false} />);
 
       const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
       const minuteMarks = container.querySelectorAll('.react-clock__minute-mark');
@@ -117,8 +117,8 @@ describe('Clock', () => {
       expect(minuteMarks).toHaveLength(60);
     });
 
-    it('has only hour marks when renderMinuteMarks is false', () => {
-      const { container } = render(<Clock renderMinuteMarks={false} />);
+    it('has only hour marks when renderMinuteMarks is false', async () => {
+      const { container } = await render(<Clock renderMinuteMarks={false} />);
 
       const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
       const minuteMarks = container.querySelectorAll('.react-clock__minute-mark');
@@ -127,8 +127,10 @@ describe('Clock', () => {
       expect(minuteMarks).toHaveLength(0);
     });
 
-    it('has no marks when renderHourMarks and renderMinuteMarks are false', () => {
-      const { container } = render(<Clock renderHourMarks={false} renderMinuteMarks={false} />);
+    it('has no marks when renderHourMarks and renderMinuteMarks are false', async () => {
+      const { container } = await render(
+        <Clock renderHourMarks={false} renderMinuteMarks={false} />,
+      );
 
       const hourMarks = container.querySelectorAll('.react-clock__hour-mark');
       const minuteMarks = container.querySelectorAll('.react-clock__minute-mark');
@@ -183,21 +185,21 @@ describe('Clock', () => {
   }
 
   describe('hour hand', () => {
-    it('is rendered properly', () => {
-      const { container } = render(<Clock />);
+    it('is rendered properly', async () => {
+      const { container } = await render(<Clock />);
 
       const hand = container.querySelector('.react-clock__hour-hand');
 
       expect(hand).toBeInTheDocument();
     });
 
-    it('is properly angled by default', () => {
+    it('is properly angled by default', async () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
       const date = new Date(2017, 0, 1, hour, minute, second);
 
-      const { container } = render(<Clock value={date} />);
+      const { container } = await render(<Clock value={date} />);
 
       const hand = container.querySelector('.react-clock__hour-hand') as HTMLDivElement;
 
@@ -206,14 +208,14 @@ describe('Clock', () => {
       );
     });
 
-    it('is properly angled when given useMillisecondPrecision', () => {
+    it('is properly angled when given useMillisecondPrecision', async () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
       const millisecond = 321;
       const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
 
-      const { container } = render(<Clock useMillisecondPrecision value={date} />);
+      const { container } = await render(<Clock useMillisecondPrecision value={date} />);
 
       const hand = container.querySelector('.react-clock__hour-hand') as HTMLDivElement;
 
@@ -227,43 +229,43 @@ describe('Clock', () => {
   });
 
   describe('minute hand', () => {
-    it('is rendered properly', () => {
-      const { container } = render(<Clock />);
+    it('is rendered properly', async () => {
+      const { container } = await render(<Clock />);
 
       const hand = container.querySelector('.react-clock__minute-hand');
 
       expect(hand).toBeInTheDocument();
     });
 
-    it('is not rendered when renderMinuteHand is false', () => {
-      const { container } = render(<Clock renderMinuteHand={false} />);
+    it('is not rendered when renderMinuteHand is false', async () => {
+      const { container } = await render(<Clock renderMinuteHand={false} />);
 
       const hand = container.querySelector('.react-clock__minute-hand');
 
       expect(hand).not.toBeInTheDocument();
     });
 
-    it('is properly angled by default', () => {
+    it('is properly angled by default', async () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
       const date = new Date(2017, 0, 1, hour, minute, second);
 
-      const { container } = render(<Clock value={date} />);
+      const { container } = await render(<Clock value={date} />);
 
       const hand = container.querySelector('.react-clock__minute-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(minute * minuteAngle + second * minuteSecondAngle);
     });
 
-    it('is properly angled when given useMillisecondPrecision', () => {
+    it('is properly angled when given useMillisecondPrecision', async () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
       const millisecond = 321;
       const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
 
-      const { container } = render(<Clock useMillisecondPrecision value={date} />);
+      const { container } = await render(<Clock useMillisecondPrecision value={date} />);
 
       const hand = container.querySelector('.react-clock__minute-hand') as HTMLDivElement;
 
@@ -274,43 +276,43 @@ describe('Clock', () => {
   });
 
   describe('second hand', () => {
-    it('is rendered properly', () => {
-      const { container } = render(<Clock />);
+    it('is rendered properly', async () => {
+      const { container } = await render(<Clock />);
 
       const hand = container.querySelector('.react-clock__second-hand');
 
       expect(hand).toBeInTheDocument();
     });
 
-    it('is not rendered when renderSecondHand is false', () => {
-      const { container } = render(<Clock renderSecondHand={false} />);
+    it('is not rendered when renderSecondHand is false', async () => {
+      const { container } = await render(<Clock renderSecondHand={false} />);
 
       const hand = container.querySelector('.react-clock__second-hand');
 
       expect(hand).not.toBeInTheDocument();
     });
 
-    it('is properly angled by default', () => {
+    it('is properly angled by default', async () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
       const date = new Date(2017, 0, 1, hour, minute, second);
 
-      const { container } = render(<Clock value={date} />);
+      const { container } = await render(<Clock value={date} />);
 
       const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
 
       expect(getAngle(hand)).toBeCloseTo(second * secondAngle);
     });
 
-    it('is properly angled when given useMillisecondPrecision', () => {
+    it('is properly angled when given useMillisecondPrecision', async () => {
       const hour = 9;
       const minute = 20;
       const second = 47;
       const millisecond = 321;
       const date = new Date(2017, 0, 1, hour, minute, second, millisecond);
 
-      const { container } = render(<Clock useMillisecondPrecision value={date} />);
+      const { container } = await render(<Clock useMillisecondPrecision value={date} />);
 
       const hand = container.querySelector('.react-clock__second-hand') as HTMLDivElement;
 
