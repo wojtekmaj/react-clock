@@ -13,6 +13,16 @@ describe('Clock', () => {
       expect(time).toBeInTheDocument();
     });
 
+    it('applies className to its wrapper when given a string', async () => {
+      const className = 'testClassName';
+
+      const { container } = await render(<Clock className={className} />);
+
+      const wrapper = container.querySelector('.react-clock');
+
+      expect(wrapper).toHaveClass(className);
+    });
+
     it('has 150px size by default', async () => {
       const { container } = await render(<Clock />);
 
