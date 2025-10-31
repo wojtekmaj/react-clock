@@ -23,6 +23,16 @@ describe('Clock', () => {
       expect(wrapper).toHaveClass(className);
     });
 
+    it('applies data-testid to its wrapper when given a string', async () => {
+      const dataTestId = 'testClock';
+
+      const { container } = await render(<Clock data-testid={dataTestId} />);
+
+      const wrapper = container.querySelector('.react-clock');
+
+      expect(wrapper).toHaveAttribute('data-testid', dataTestId);
+    });
+
     it('has 150px size by default', async () => {
       const { container } = await render(<Clock />);
 

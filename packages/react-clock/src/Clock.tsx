@@ -26,6 +26,12 @@ export type ClockProps = {
    */
   className?: ClassName;
   /**
+   * The test ID used for testing purposes.
+   *
+   * @example 'clock'
+   */
+  'data-testid'?: string;
+  /**
    * Function called to override default formatting of hour marks. Can be used to use your own formatting function.
    *
    * @example (locale, hour) => formatHour(hour, 'HH')
@@ -193,6 +199,7 @@ export type ClockProps = {
  */
 export default function Clock({
   className,
+  'data-testid': dataTestId,
   formatHour = defaultFormatHour,
   hourHandLength = 50,
   hourHandOppositeLength,
@@ -362,6 +369,7 @@ export default function Clock({
   return (
     <time
       className={clsx('react-clock', className)}
+      data-testid={dataTestId}
       dateTime={
         value instanceof Date
           ? // Returns a string in the format "HH:MM" or "HH:MM:SS"
