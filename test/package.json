@@ -21,13 +21,13 @@
   "dependencies": {
     "@wojtekmaj/date-utils": "^2.0.2",
     "@wojtekmaj/react-hooks": "^2.0.0",
-    "react": "^18.2.0",
+    "react": "^19.2.0",
     "react-clock": "workspace:packages/react-clock",
-    "react-dom": "^18.2.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.2",
-    "@types/react": "*",
+    "@types/react": "^19.2.0",
     "@vitejs/plugin-react": "^4.6.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.11"
