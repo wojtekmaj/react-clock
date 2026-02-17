@@ -16,13 +16,14 @@
   "license": "MIT",
   "dependencies": {
     "@wojtekmaj/react-hooks": "^2.0.0",
-    "react": "^18.2.0",
+    "react": "^19.2.0",
     "react-clock": "latest",
-    "react-dom": "^18.2.0"
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.6.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.11"
-  }
+  },
+  "packageManager": "yarn@4.10.3"
 }
