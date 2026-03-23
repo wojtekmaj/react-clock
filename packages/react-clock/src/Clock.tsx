@@ -374,7 +374,6 @@ export default function Clock({
         value instanceof Date
           ? // Returns a string in the format "HH:MM" or "HH:MM:SS"
             value.toLocaleTimeString('en', {
-              hourCycle: 'h23',
               hour: '2-digit',
               minute: renderMinuteHand ? '2-digit' : undefined,
               second: renderSecondHand ? '2-digit' : undefined,

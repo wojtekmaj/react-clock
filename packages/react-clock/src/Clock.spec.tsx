@@ -62,7 +62,6 @@ describe('Clock', () => {
       expect(time).toHaveAttribute(
         'datetime',
         date.toLocaleTimeString('en', {
-          hourCycle: 'h23',
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
