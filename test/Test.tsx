@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import Clock from 'react-clock';
 import 'react-clock/dist/Clock.css';
-import { useSetInterval } from '@wojtekmaj/react-hooks';
 import { getHoursMinutesSeconds } from '@wojtekmaj/date-utils';
+import { useSetInterval } from '@wojtekmaj/react-hooks';
 
 import LocaleOptions from './LocaleOptions.js';
 import ValueOptions from './ValueOptions.js';
